@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700);
+*,
+*:before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body {
+    height: 100%;
+}
+html,
+body {
+    font-family: "Comfortaa";
+    color: orange;
+
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.text, .height{
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.colors{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.orange{
+    background-color: orange;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pink{
+    background-color: rgb(255, 1, 221);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el::after{
+    content: " элементов";
+}
+
+.m::after{
+    content: " метров";
+}
+
+.preview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex: 1; */
+}
+
+.preview__text{
+    font-size: 40px;
+    border-radius: 10px;
+    background-color: rgb(126, 126, 126, .2);
+    text-shadow: 0 0 10px orange,0 0 20px orange,0 0 30px orange,0 0 40px orange;
+    border: .5px solid rgb(116, 116, 116);
+    padding: 10px;
+}
