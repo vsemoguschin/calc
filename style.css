@@ -41,7 +41,7 @@ body {
     background-color: black;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -50,7 +50,7 @@ body {
     height: 100%;
 }
 
-.values{
+.values {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,26 +58,27 @@ body {
     margin-bottom: 20px;
 }
 
-.text, .height{
+.text,
+.height {
     margin-bottom: 10px;
     height: 30px;
     border-radius: 5px;
 }
 
-.colors{
+.colors {
     display: flex;
     margin-top: 10px;
     gap: 20px;
 }
 
-.orange{
+.orange {
     background-color: orange;
     height: 20px;
     width: 20px;
     border-radius: 50%;
     cursor: pointer;
 }
-.pink{
+.pink {
     background-color: rgb(255, 1, 221);
     height: 20px;
     width: 20px;
@@ -85,15 +86,15 @@ body {
     cursor: pointer;
 }
 
-.el::after{
+.el::after {
     content: " элементов";
 }
 
-.m::after{
+.m::after {
     content: " метров";
 }
 
-.preview{
+.preview {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,11 +102,11 @@ body {
     /* flex: 1; */
 }
 
-.preview__text{
+.preview__text {
     font-size: 40px;
     border-radius: 10px;
-    background-color: rgb(126, 126, 126, .2);
-    text-shadow: 0 0 10px orange,0 0 20px orange,0 0 30px orange,0 0 40px orange;
-    border: .5px solid rgb(116, 116, 116);
+    background-color: rgb(126, 126, 126, 0.2);
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+    border: 0.5px solid rgb(116, 116, 116);
     padding: 10px;
 }

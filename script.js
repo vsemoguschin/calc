@@ -145,7 +145,7 @@ const colors = document.querySelectorAll('.color');
 const textColor = document.querySelector('.preview__text');
 
 console.dir(colors)
-height.value = fontHeight
+// height.value = fontHeight
 
 function sum(text, h) {
     let a = text.toUpperCase().split('');
