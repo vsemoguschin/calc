@@ -1,5 +1,5 @@
 "use strict"
-let fontHeight = 10;
+let fontHeight = 20;
 let ABV = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 let text = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 let cond = {
