@@ -136,21 +136,24 @@ let cond = {
         el: 2
     },
 };
-const input = document.querySelector(".text");
-const resultText = document.querySelector(".preview__text");
+const input = document.querySelector(".input__text");
+const resultText = document.querySelector(".product__text");
 const metrs = document.querySelector(".m");
 const els = document.querySelector(".el");
-const height = document.querySelector('.height');
 const colors = document.querySelectorAll('.color');
-const textColor = document.querySelector('.preview__text');
+const textColor = document.querySelector('.product__text');
+const workPrice = document.querySelector(".work");
+const productWidth = document.querySelector('.product__width');
+const productHeight = document.querySelector('.product__height');
+const inputHeight = document.querySelector('.input__height');
 
-console.dir(colors)
-// height.value = fontHeight
+
+productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
+productWidth.textContent = Math.ceil(calcWidth() / 4) + ' см'
+sum("привет!", fontHeight)
 
 function sum(text, h) {
     let a = text.toUpperCase().split('');
-    console.log(typeof text)
-    a
     let m = 0;
     let el = 0;
     for (let i = 0; i < a.length; i++) {
@@ -161,12 +164,27 @@ function sum(text, h) {
     }
     console.log(a)
     console.log(el)
-    metrs.textContent = Math.ceil(m * 10) / 100
+    metrs.textContent = Math.ceil(m * h) / 100
     // metrs.textContent = m 
     els.textContent = el
-    // return `${m * h * 0.01}м, ${el}эл`
+    workPrice.textContent = el * 50 + metrs.textContent * 100
+    productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
+    productWidth.textContent = Math.ceil(calcWidth() / 4) + ' см'
 }
-// console.log(sum(text, fontHeight))
+
+function changeHeight(value) {
+    resultText.style.fontSize = `${+value * 4}px`
+    resultText.style.height = `${+value * 4}px`
+    productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
+    productWidth.textContent = Math.ceil(calcWidth() / 4) + ' см'
+}
+
+inputHeight.addEventListener('input', (e) => {
+    e.preventDefault();
+    const a = resultText.textContent
+    sum(a, inputHeight.value)
+    changeHeight(inputHeight.value)
+})
 
 
 
@@ -177,12 +195,10 @@ function createText(text) {
 input.addEventListener('input', (e) => {
     e.preventDefault();
     createText(input.value.toUpperCase())
-    sum(input.value, fontHeight)
+    sum(input.value, inputHeight.value)
 })
 
 colors.forEach((el, i) => {
-
-    console.log(el)
     el.addEventListener('click', (e) => {
         e.preventDefault();
         if (i == 0) {
@@ -196,3 +212,20 @@ colors.forEach((el, i) => {
         }
     })
 })
+
+
+//Расчет длины и ширины
+
+function calcWidth() {
+    let width = resultText.getBoundingClientRect().width
+    return width
+}
+function calcHeight() {
+    let height = resultText.getBoundingClientRect().height
+    return height
+}
+
+function calcSizes() {
+    calcHeight()
+    calcWidth()
+}

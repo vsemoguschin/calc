@@ -34,6 +34,7 @@ body {
 html,
 body {
     font-family: "Comfortaa";
+    font-weight: 400;
     color: orange;
 
     height: 100%;
@@ -56,13 +57,6 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.text,
-.height {
-    margin-bottom: 10px;
-    height: 30px;
-    border-radius: 5px;
 }
 
 .colors {
@@ -94,19 +88,103 @@ body {
     content: " метров";
 }
 
-.preview {
+.work::after {
+    content: " р(работа)";
+}
+
+.product {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(126, 126, 126, 0.1);
+    text-shadow: 0 0 10px orange;
+    border: 0.5px solid rgb(116, 116, 116);
+    padding: 10px;
+    text-align: center;
+
     /* flex: 1; */
 }
 
-.preview__text {
-    font-size: 40px;
-    border-radius: 10px;
-    background-color: rgb(126, 126, 126, 0.2);
+.product__width {
+    font-size: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    position: absolute;
+    top: -30px;
+    border-left: 1px solid rgba(136, 136, 136, 0.308);
+    border-right: 1px solid rgba(136, 136, 136, 0.308);
+}
+.product__width::before {
+    content: "<";
+}
+
+.product__width::after {
+    content: ">";
+}
+
+.product__text {
+    font-size: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    letter-spacing: 1px;
     text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-    border: 0.5px solid rgb(116, 116, 116);
-    padding: 10px;
+    text-align: center;
+}
+
+.product__height {
+    font-size: 10px;
+    writing-mode: tb-rl;
+    color: white;
+    position: absolute;
+    right: -30px;
+    padding-left: 20px;
+    border-top: 1px solid rgba(136, 136, 136, 0.308);
+    border-bottom: 1px solid rgba(136, 136, 136, 0.308);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+.product__height::before {
+    content: "<";
+}
+.product__height::after {
+    content: ">";
+}
+.values__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input__height {
+    width: 50px;
+    font-size: 20px;
+    display: flex;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.input__text {
+    font-size: 20px;
+    display: flex;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input__add{
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: underline;
 }
