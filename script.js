@@ -530,6 +530,46 @@ const comfortaa = {
         l: 1.903,
         el: 1
     },
+    "1": {
+        l: 1.193,
+        el: 1
+    },
+    "2": {
+        l: 2.321,
+        el: 1
+    },
+    "3": {
+        l: 2.205,
+        el: 2
+    },
+    "4": {
+        l: 2.513,
+        el: 1
+    },
+    "5": {
+        l: 2.523,
+        el: 1
+    },
+    "6": {
+        l: 2.356,
+        el: 1
+    },
+    "7": {
+        l: 1.673,
+        el: 1
+    },
+    "8": {
+        l: 3.142,
+        el: 2
+    },
+    "9": {
+        l: 2.356,
+        el: 1
+    },
+    "0": {
+        l: 2.523,
+        el: 1
+    },
 };
 const neonColors = {
     orange: "orange",
@@ -547,6 +587,8 @@ const workPrice = document.querySelector(".work");
 const productWidth = document.querySelector('.product__width');
 const productHeight = document.querySelector('.product__height');
 const inputHeight = document.querySelector('.input__height');
+const addString = document.querySelector(".input__add");
+const productBlock = document.querySelector(".product");
 
 
 productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
@@ -567,15 +609,15 @@ function sum(text, h) {
     // metrs.textContent = m 
     els.textContent = el
     workPrice.textContent = el * 50 + metrs.textContent * 100
-    productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
-    productWidth.textContent = Math.ceil(calcWidth() / 4) + ' см'
+    productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
+    productWidth.textContent = Math.ceil(calcWidth() / 4) + 2 + ' см'
 }
 
 function changeHeight(value) {
     resultText.style.fontSize = `${+value * 4}px`
     resultText.style.height = `${+value * 4}px`
-    productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
-    productWidth.textContent = Math.ceil(calcWidth() / 4) + ' см'
+    productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
+    productWidth.textContent = Math.ceil(calcWidth() / 4) + 2 + ' см'
 }
 
 inputHeight.addEventListener('input', (e) => {
@@ -638,3 +680,10 @@ function calcSizes() {
     calcHeight()
     calcWidth()
 }
+
+// addString.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     const el = document.createElement('div');
+//     el.classList.add("product__text")
+//     productBlock.appendChild(el)
+// })
