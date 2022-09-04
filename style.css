@@ -36,7 +36,6 @@ body {
     font-family: "Comfortaa";
     font-weight: 400;
     color: orange;
-
     height: 100%;
     width: 100%;
     background-color: black;
@@ -75,6 +74,13 @@ body {
 }
 .pink {
     background-color: rgb(255, 1, 221);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.green {
+    background-color: #04ff00;
     height: 20px;
     width: 20px;
     border-radius: 50%;
@@ -133,8 +139,8 @@ body {
 }
 
 .product__text {
-    font-size: 20px;
-    height: 20px;
+    font-size: 40px;
+    height: 40px;
     display: flex;
     flex-direction: column;
     font-weight: 300;
