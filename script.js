@@ -60,7 +60,7 @@ const comfortaa = {
     },
     Н: {
         l: 2.696,
-        el: 2
+        el: 3
     },
     О: {
         l: 3.147,
@@ -352,7 +352,7 @@ const comfortaa = {
     },
     H: {
         l: 2.696,
-        el: 2
+        el: 3
     },
     I: {
         l: 1.000,
@@ -574,7 +574,10 @@ const comfortaa = {
 const neonColors = {
     orange: "orange",
     pink: "rgb(255, 1, 221)",
-    green: "#04ff00"
+    green: "#04ff00",
+    red: 'red',
+    white: 'white',
+    blue: '#009aff'
 }
 
 const textInput = document.querySelector(".input__text");
@@ -590,100 +593,178 @@ const inputHeight = document.querySelector('.input__height');
 const addString = document.querySelector(".input__add");
 const productBlock = document.querySelector(".product");
 
-
-productHeight.textContent = Math.ceil(calcHeight() / 4) + ' см'
-productWidth.textContent = Math.ceil(calcWidth() / 4) + ' см'
-sum("привет!", resultText.getBoundingClientRect().height)
-
-function sum(text, h) {
-    let a = text.split('');
-    let m = 0;
-    let el = 0;
-    for (let i = 0; i < a.length; i++) {
-        if (comfortaa[a[i]]) {
-            m = m + comfortaa[a[i]].l
-            el = el + comfortaa[a[i]].el
-        }
-    }
-    metrs.textContent = Math.ceil(m * h) / 100
-    // metrs.textContent = m 
-    els.textContent = el
-    workPrice.textContent = el * 50 + metrs.textContent * 100
-    productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
-    productWidth.textContent = Math.ceil(calcWidth() / 4) + 2 + ' см'
-}
-
-function changeHeight(value) {
-    resultText.style.fontSize = `${+value * 4}px`
-    resultText.style.height = `${+value * 4}px`
-    productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
-    productWidth.textContent = Math.ceil(calcWidth() / 4) + 2 + ' см'
-}
-
-inputHeight.addEventListener('input', (e) => {
-    e.preventDefault();
-    const a = resultText.textContent
-    sum(a, inputHeight.value)
-    changeHeight(inputHeight.value)
-})
-
-
-
-function createText(text) {
-    resultText.textContent = text
-}
-textInput.addEventListener('keydown', (e) => {
-    console.log(e.key)
-    if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
-        e.preventDefault()
-    }
-})
-
-textInput.addEventListener('input', (e) => {
-    e.preventDefault();
-    createText(textInput.value)
-    sum(textInput.value, inputHeight.value)
-})
-
-
-colors.forEach((el, i) => {
-    el.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (i == 0) {
-            textColor.style.color = neonColors.orange
-            textColor.style.textShadow = `0 0 10px ${neonColors.orange},0 0 20px ${neonColors.orange},0 0 30px ${neonColors.orange},0 0 40px ${neonColors.orange}`
-        }
-        else if (i == 1) {
-            textColor.style.color = neonColors.pink
-            textColor.style.textShadow = `0 0 10px ${neonColors.pink},0 0 20px ${neonColors.pink},0 0 30px ${neonColors.pink},0 0 40px ${neonColors.pink}`
-        }
-        else if (i == 2) {
-            textColor.style.color = neonColors.green
-            textColor.style.textShadow = `0 0 10px ${neonColors.green},0 0 20px ${neonColors.green},0 0 30px ${neonColors.green},0 0 40px ${neonColors.green}`
-        }
-    })
-})
-
-
 //Расчет длины и ширины
 
-function calcWidth() {
-    let width = resultText.getBoundingClientRect().width
-    return width
-}
-function calcHeight() {
-    let height = resultText.getBoundingClientRect().height
-    return height
-}
+ function calcWidth() {
+     let width = productBlock.getBoundingClientRect().width
+     return width
+ }
+// function calcHeight() {
+//     let height = resultText.getBoundingClientRect().height
+//     return height
+// }
 
 function calcSizes() {
     calcHeight()
     calcWidth()
 }
+//----------------------------------------------------------------
+const inputs = document.querySelector('.values__inputs');
 
-// addString.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     const el = document.createElement('div');
-//     el.classList.add("product__text")
-//     productBlock.appendChild(el)
-// })
+addString.addEventListener('click', createNewString)
+createString()
+function createString() {
+    const previewText = document.createElement('div')
+    previewText.classList.add('product__text');
+
+    productBlock.appendChild(previewText);
+    // previewText.style.color = previewText.previousElementSibling.style.color;
+    // previewText.style.textShadow = previewText.previousElementSibling.style.textShadow;
+    // previewText.style.fontSize = previewText.previousElementSibling.style.fontSize
+
+    const input = document.createElement('div');
+    input.classList.add('input');
+
+    const textInput = document.createElement('input');
+    textInput.classList.add('input__text');
+    textInput.placeholder = 'Введите текст';
+    textInput.addEventListener('keydown', (e) => {
+        if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
+            e.preventDefault()
+        }
+    })
+    textInput.value = 'HELLO!'
+    previewText.textContent = textInput.value;
+
+    const heightInput = document.createElement('input');
+    heightInput.classList.add('input__height');
+    heightInput.type = 'number'
+
+    const palette = createColorPalette(neonColors, previewText);
+
+    input.appendChild(textInput);
+    input.appendChild(heightInput);
+    input.appendChild(palette);
+    inputs.appendChild(input);
+
+    const prevHeightValue = previewText.getBoundingClientRect().height;
+
+    heightInput.value = 10;
+    heightInput.addEventListener('input', (e) => {
+        previewText.style.fontSize = `${+e.target.value * 4}px`;
+        sum()
+    })
+    textInput.addEventListener('input', (e) => {
+        e.preventDefault();
+        previewText.textContent = e.target.value
+        sum()
+    })
+
+}
+
+function createNewString() {
+    const previewText = document.createElement('div')
+    previewText.classList.add('product__text');
+    // previewText.textContent = 'ghbdj';
+    productBlock.appendChild(previewText);
+    // console.dir(previewText.previousElementSibling.style);
+    previewText.style.color = previewText.previousElementSibling.style.color;
+    previewText.style.textShadow = previewText.previousElementSibling.style.textShadow;
+    previewText.style.fontSize = previewText.previousElementSibling.style.fontSize
+
+    const input = document.createElement('div');
+    input.classList.add('input');
+
+    const textInput = document.createElement('input');
+    textInput.classList.add('input__text');
+    textInput.placeholder = 'Введите текст';
+    textInput.addEventListener('keydown', (e) => {
+        if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
+            e.preventDefault()
+        }
+    })
+
+    const heightInput = document.createElement('input');
+    heightInput.classList.add('input__height');
+    heightInput.type = 'number'
+
+    const palette = createColorPalette(neonColors, previewText);
+
+    input.appendChild(textInput);
+    input.appendChild(heightInput);
+    input.appendChild(palette);
+    inputs.appendChild(input);
+
+    const prevHeightValue = input.previousElementSibling.children[1].value;
+
+    heightInput.value = prevHeightValue;
+    heightInput.addEventListener('input', (e) => {
+        previewText.style.fontSize = `${+e.target.value * 4}px`;
+        // previewText.style.height = `${+e.target.value * 4}px`;
+        sum()
+    })
+    textInput.addEventListener('input', (e) => {
+        e.preventDefault();
+        previewText.textContent = e.target.value
+        sum()
+    })
+
+}
+
+function createColorPalette(colors, text) {
+    const palette = document.createElement('div');
+    palette.classList.add('colors');
+
+    for (let value in colors) {
+        const color = document.createElement('div');
+        color.classList.add('color');
+        palette.appendChild(color);
+        color.style.backgroundColor = colors[value];
+        color.addEventListener('click', (e) => {
+            e.preventDefault();
+            let code = color.style.backgroundColor;
+            text.style.color = code;
+            text.style.textShadow = `0 0 10px ${code},0 0 20px ${code},0 0 30px ${code},0 0 40px ${code}`;
+        })
+    }
+
+    return palette
+}
+
+function changeColor(color) {
+    console.log(color)
+    let code = color.target.style.backgroundColor;
+    console.dir(color);
+    textColor.style.color = code;
+    textColor.style.textShadow = `0 0 10px ${code},0 0 20px ${code},0 0 30px ${code},0 0 40px ${code}`;
+}
+
+
+function sum() {
+    const textInputs = document.querySelectorAll('.input__text');
+    let m = 0;
+    let elements = 0;
+    let height = 0;
+    textInputs.forEach(el => {
+        let a = el.value.split('');
+        for (let i = 0; i < a.length; i++) {
+            if (comfortaa[a[i]]) {
+                m = m + comfortaa[a[i]].l*el.nextElementSibling.value;
+                elements = elements + comfortaa[a[i]].el
+            }
+            console.log(m)
+        }
+        if (el.value) {
+            // console.log(el.value, m*el.nextElementSibling.value)
+            // console.log(el.value, elements)
+            height = height + +el.nextElementSibling.value + 1
+            productHeight.textContent = height + 1 + ' см'
+            els.textContent = elements + 1
+            // productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
+            productWidth.textContent = Math.ceil(calcWidth() / 4) + 2 + ' см'
+            metrs.textContent = Math.ceil(m) / 100;
+        }
+        
+    })
+}
+sum()

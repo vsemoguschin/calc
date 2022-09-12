@@ -39,16 +39,18 @@ body {
     height: 100%;
     width: 100%;
     background-color: black;
-    
 }
 
 .container {
     background-image: url(bg.png);
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     height: 100%;
+    padding-left: 30%;
 }
 
 .values {
@@ -61,34 +63,30 @@ body {
 
 .colors {
     display: flex;
-    margin-top: 10px;
-    gap: 20px;
+    gap: 5px;
+    align-items: center;
+}
+.color {
+    height: 15px;
+    width: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.orange {
+/* .orange {
     background-color: orange;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    cursor: pointer;
+
 }
 .pink {
     background-color: rgb(255, 1, 221);
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    cursor: pointer;
+
 }
 .green {
     background-color: #04ff00;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
+} */
 
 .el::after {
-    content: " элементов";
+    content: " элементов(с блоком)";
 }
 
 .m::after {
@@ -104,8 +102,6 @@ body {
     position: relative;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
-    margin-top: 50px;
     text-align: center;
     flex-direction: column;
     border-radius: 10px;
@@ -114,6 +110,8 @@ body {
     border: 0.5px solid rgb(116, 116, 116);
     padding: 0.3em;
     text-align: center;
+    margin: auto;
+
 
     /* flex: 1; */
 }
@@ -140,7 +138,7 @@ body {
 
 .product__text {
     font-size: 40px;
-    height: 40px;
+    /* height: 40px; */
     display: flex;
     flex-direction: column;
     font-weight: 300;
@@ -173,26 +171,60 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
+}
+.input {
+    display: flex;
+    margin-bottom: 10px;
 }
 
 .input__height {
     width: 50px;
     font-size: 20px;
-    display: flex;
     border-radius: 5px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-right: 10px;
 }
 .input__text {
+    margin-right: 10px;
     font-size: 20px;
     display: flex;
     border-radius: 5px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.input__add{
+.input__add {
     margin-bottom: 20px;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.client__block {
+    width: 300px;
+    border: 1px solid rgb(199, 33, 143) ;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-size: 14px;
+    color: white;
+    padding: 10px 15px;
+}
+
+.client__old-price{
+    font-size: 30px;
+    text-decoration: 2px line-through rgb(199, 33, 143)  ;
+    margin: 10px 0;
+}
+.client__old-price::after{
+    content: ' руб';
+}
+.client__new-price{
+    font-size: 50px;
+    color: rgb(42, 171, 231);
+    margin-bottom: 10px;
+}
+.client__new-price::after{
+    content: ' руб';
 }
