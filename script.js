@@ -592,13 +592,15 @@ const productHeight = document.querySelector('.product__height');
 const inputHeight = document.querySelector('.input__height');
 const addString = document.querySelector(".input__add");
 const productBlock = document.querySelector(".product");
+const price = document.querySelector(".client__new-price");
+const oldPrice = document.querySelector(".client__old-price");
 
 //Расчет длины и ширины
 
- function calcWidth() {
-     let width = productBlock.getBoundingClientRect().width
-     return width
- }
+function calcWidth() {
+    let width = productBlock.getBoundingClientRect().width
+    return width
+}
 // function calcHeight() {
 //     let height = resultText.getBoundingClientRect().height
 //     return height
@@ -743,28 +745,46 @@ function changeColor(color) {
 function sum() {
     const textInputs = document.querySelectorAll('.input__text');
     let m = 0;
-    let elements = 0;
-    let height = 0;
+    let elements = 1;
+    let height = 1;
+    let width = Math.ceil(calcWidth() / 4) + 2;
     textInputs.forEach(el => {
         let a = el.value.split('');
         for (let i = 0; i < a.length; i++) {
             if (comfortaa[a[i]]) {
-                m = m + comfortaa[a[i]].l*el.nextElementSibling.value;
+                m = m + comfortaa[a[i]].l * el.nextElementSibling.value;
                 elements = elements + comfortaa[a[i]].el
             }
-            console.log(m)
         }
         if (el.value) {
             // console.log(el.value, m*el.nextElementSibling.value)
             // console.log(el.value, elements)
             height = height + +el.nextElementSibling.value + 1
-            productHeight.textContent = height + 1 + ' см'
-            els.textContent = elements + 1
+            productHeight.textContent = height + ' см'
+            els.textContent = elements
             // productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
-            productWidth.textContent = Math.ceil(calcWidth() / 4) + 2 + ' см'
+            productWidth.textContent = width + ' см'
             metrs.textContent = Math.ceil(m) / 100;
         }
-        
+        price.textContent = calcPrice(elements, Math.ceil(m) / 100, height, width)
+        oldPrice.textContent = Math.ceil(calcPrice(elements, Math.ceil(m) / 100, height, width) * 1.2)
     })
 }
 sum()
+
+function calcPrice(elements, metrs, height, width) {
+    // console.log(elements, metrs, height, width)
+    let blockPrice = 0;
+    if (metrs <= 2) {
+        blockPrice = 1000
+    } else if (metrs > 2 && metrs <= 10) {
+        blockPrice = 2000
+    } else if (metrs > 10 && metrs < 20) {
+        blockPrice = 3000
+    } else if (metrs > 20) {
+        blockPrice = 5000
+    }
+    let result = Math.ceil(elements * 120 + metrs * 6000 + ((height / 100) * (width / 100)) * 6000 + blockPrice)
+    console.log(blockPrice)
+    return result
+}
