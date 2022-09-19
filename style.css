@@ -108,10 +108,10 @@ body {
     background-color: rgb(126, 126, 126, 0.1);
     text-shadow: 0 0 10px orange;
     border: 0.5px solid rgb(116, 116, 116);
-    padding: 0.3em;
+    padding: 0.3em 0;
     text-align: center;
     margin: auto;
-
+    white-space: nowrap;
 
     /* flex: 1; */
 }
@@ -201,7 +201,7 @@ body {
 
 .client__block {
     width: 300px;
-    border: 1px solid rgb(199, 33, 143) ;
+    border: 1px solid rgb(199, 33, 143);
     border-radius: 20px;
     padding: 10px;
     position: absolute;
@@ -212,19 +212,19 @@ body {
     padding: 10px 15px;
 }
 
-.client__old-price{
+.client__old-price {
     font-size: 30px;
-    text-decoration: 2px line-through rgb(199, 33, 143)  ;
+    text-decoration: 2px line-through rgb(199, 33, 143);
     margin: 10px 0;
 }
-.client__old-price::after{
-    content: ' руб';
+.client__old-price::after {
+    content: " руб";
 }
-.client__new-price{
+.client__new-price {
     font-size: 50px;
     color: rgb(42, 171, 231);
     margin-bottom: 10px;
 }
-.client__new-price::after{
-    content: ' руб';
+.client__new-price::after {
+    content: " руб";
 }

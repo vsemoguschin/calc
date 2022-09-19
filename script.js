@@ -581,15 +581,12 @@ const neonColors = {
 }
 
 const textInput = document.querySelector(".input__text");
-const resultText = document.querySelector(".product__text");
 const metrs = document.querySelector(".m");
 const els = document.querySelector(".el");
-const colors = document.querySelectorAll('.color');
-const textColor = document.querySelector('.product__text');
 const workPrice = document.querySelector(".work");
 const productWidth = document.querySelector('.product__width');
 const productHeight = document.querySelector('.product__height');
-const inputHeight = document.querySelector('.input__height');
+// const inputHeight = document.querySelector('.input__height');
 const addString = document.querySelector(".input__add");
 const productBlock = document.querySelector(".product");
 const price = document.querySelector(".client__new-price");
@@ -598,7 +595,8 @@ const oldPrice = document.querySelector(".client__old-price");
 //Расчет длины и ширины
 
 function calcWidth() {
-    let width = productBlock.getBoundingClientRect().width
+    let width = +productBlock.getBoundingClientRect().width
+
     return width
 }
 // function calcHeight() {
@@ -747,7 +745,7 @@ function sum() {
     let m = 0;
     let elements = 1;
     let height = 1;
-    let width = Math.ceil(calcWidth() / 4) + 2;
+    let width = Math.ceil(calcWidth() / 4);
     textInputs.forEach(el => {
         let a = el.value.split('');
         for (let i = 0; i < a.length; i++) {
@@ -773,7 +771,7 @@ function sum() {
 sum()
 
 function calcPrice(elements, metrs, height, width) {
-    // console.log(elements, metrs, height, width)
+    console.log(elements, metrs, height, width)
     let blockPrice = 0;
     if (metrs <= 2) {
         blockPrice = 1000
@@ -784,7 +782,7 @@ function calcPrice(elements, metrs, height, width) {
     } else if (metrs > 20) {
         blockPrice = 5000
     }
-    let result = Math.ceil(elements * 120 + metrs * 6000 + ((height / 100) * (width / 100)) * 6000 + blockPrice)
+    let result = Math.ceil(elements * 120 + metrs * 1000 + ((height / 100) * (width / 100)) * 6000 + blockPrice)
     console.log(blockPrice)
     return result
 }
