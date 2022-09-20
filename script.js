@@ -782,7 +782,8 @@ function calcPrice(elements, metrs, height, width) {
     } else if (metrs > 20) {
         blockPrice = 5000
     }
-    let result = Math.ceil(elements * 120 + metrs * 1000 + ((height / 100) * (width / 100)) * 6000 + blockPrice)
+    let result = Math.floor((elements * 120 + metrs * 1000 + ((height / 100) * (width / 100)) * 6000 + blockPrice)/100) *100
     console.log(blockPrice)
     return result
 }
+
