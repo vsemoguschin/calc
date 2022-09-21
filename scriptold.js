@@ -586,12 +586,10 @@ const els = document.querySelector(".el");
 const workPrice = document.querySelector(".work");
 const productWidth = document.querySelector('.product__width');
 const productHeight = document.querySelector('.product__height');
-const addNewString = document.querySelector(".input__add");
+const addString = document.querySelector(".input__add");
 const productBlock = document.querySelector(".product");
 const price = document.querySelector(".client__new-price");
 const oldPrice = document.querySelector(".client__old-price");
-const productText = document.querySelector(".product__text");
-const optPrice = document.querySelector(".optPrice");
 
 //Расчет длины и ширины
 
@@ -601,23 +599,23 @@ function calcWidth() {
 }
 
 //----------------------------------------------------------------
-const productValues = document.querySelector('.productParameters');
+const inputs = document.querySelector('.values__inputs');
 
-addNewString.addEventListener('click', createNewString)
+addString.addEventListener('click', createNewString)
 
 createString()
 
 function createString() {
-    const previewString = document.createElement('div')
-    previewString.classList.add('neonText');
+    const previewText = document.createElement('div')
+    previewText.classList.add('product__text');
 
-    productText.appendChild(previewString);
-    // previewString.style.color = previewString.previousElementSibling.style.color;
-    // previewString.style.textShadow = previewString.previousElementSibling.style.textShadow;
-    // previewString.style.fontSize = previewString.previousElementSibling.style.fontSize
+    productBlock.appendChild(previewText);
+    // previewText.style.color = previewText.previousElementSibling.style.color;
+    // previewText.style.textShadow = previewText.previousElementSibling.style.textShadow;
+    // previewText.style.fontSize = previewText.previousElementSibling.style.fontSize
 
     const input = document.createElement('div');
-    input.classList.add('parametersItem');
+    input.classList.add('input');
 
     const textInput = document.createElement('input');
     textInput.classList.add('input__text');
@@ -628,32 +626,109 @@ function createString() {
         }
     })
     textInput.value = 'HELLO!'
-    previewString.textContent = textInput.value;
+    previewText.textContent = textInput.value;
 
     const heightInput = document.createElement('input');
     heightInput.classList.add('input__height');
     heightInput.type = 'number'
 
-    const palette = createColorPalette(neonColors, previewString);
+    const palette = createColorPalette(neonColors, previewText);
 
     input.appendChild(textInput);
     input.appendChild(heightInput);
     input.appendChild(palette);
-    productValues.appendChild(input);
+    inputs.appendChild(input);
 
-    const prevHeightValue = previewString.getBoundingClientRect().height;
+    const prevHeightValue = previewText.getBoundingClientRect().height;
 
     heightInput.value = 10;
     heightInput.addEventListener('input', (e) => {
-        previewString.style.fontSize = `${+e.target.value * 4}px`;
+        previewText.style.fontSize = `${+e.target.value * 4}px`;
         sum()
     })
     textInput.addEventListener('input', (e) => {
         e.preventDefault();
-        previewString.textContent = e.target.value
+        previewText.textContent = e.target.value
         sum()
     })
 
+}
+
+function createNewString() {
+    const previewText = document.createElement('div')
+    previewText.classList.add('product__text');
+    // previewText.textContent = 'ghbdj';
+    productBlock.appendChild(previewText);
+    // console.dir(previewText.previousElementSibling.style);
+    previewText.style.color = previewText.previousElementSibling.style.color;
+    previewText.style.textShadow = previewText.previousElementSibling.style.textShadow;
+    previewText.style.fontSize = previewText.previousElementSibling.style.fontSize
+
+    const input = document.createElement('div');
+    input.classList.add('input');
+
+    const textInput = document.createElement('input');
+    textInput.classList.add('input__text');
+    textInput.placeholder = 'Введите текст';
+    textInput.addEventListener('keydown', (e) => {
+        if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
+            e.preventDefault()
+        }
+    })
+
+    const heightInput = document.createElement('input');
+    heightInput.classList.add('input__height');
+    heightInput.type = 'number'
+
+    const palette = createColorPalette(neonColors, previewText);
+
+    input.appendChild(textInput);
+    input.appendChild(heightInput);
+    input.appendChild(palette);
+    inputs.appendChild(input);
+
+    const prevHeightValue = input.previousElementSibling.children[1].value;
+
+    heightInput.value = prevHeightValue;
+    heightInput.addEventListener('input', (e) => {
+        previewText.style.fontSize = `${+e.target.value * 4}px`;
+        // previewText.style.height = `${+e.target.value * 4}px`;
+        sum()
+    })
+    textInput.addEventListener('input', (e) => {
+        e.preventDefault();
+        previewText.textContent = e.target.value
+        sum()
+    })
+
+}
+
+function createColorPalette(colors, text) {
+    const palette = document.createElement('div');
+    palette.classList.add('colors');
+
+    for (let value in colors) {
+        const color = document.createElement('div');
+        color.classList.add('color');
+        palette.appendChild(color);
+        color.style.backgroundColor = colors[value];
+        color.addEventListener('click', (e) => {
+            e.preventDefault();
+            let code = color.style.backgroundColor;
+            text.style.color = code;
+            text.style.textShadow = `0 0 10px ${code},0 0 20px ${code},0 0 30px ${code},0 0 40px ${code}`;
+        })
+    }
+
+    return palette
+}
+
+function changeColor(color) {
+    console.log(color)
+    let code = color.target.style.backgroundColor;
+    console.dir(color);
+    textColor.style.color = code;
+    textColor.style.textShadow = `0 0 10px ${code},0 0 20px ${code},0 0 30px ${code},0 0 40px ${code}`;
 }
 
 
@@ -681,15 +756,14 @@ function sum() {
             productWidth.textContent = width + ' см'
             metrs.textContent = Math.ceil(m) / 100;
         }
-        optPrice.textContent = calcPrice(elements, Math.ceil(m) / 100, height, width)
-        price.textContent = Math.ceil(calcPrice(elements, Math.ceil(m) / 100, height, width) * 1.2)
-        oldPrice.textContent = Math.ceil(calcPrice(elements, Math.ceil(m) / 100, height, width) * 1.4)
+        price.textContent = calcPrice(elements, Math.ceil(m) / 100, height, width)
+        oldPrice.textContent = Math.ceil(calcPrice(elements, Math.ceil(m) / 100, height, width) * 1.2)
     })
 }
 sum()
 
 function calcPrice(elements, metrs, height, width) {
-    // console.log(elements, metrs, height, width)
+    console.log(elements, metrs, height, width)
     let blockPrice = 0;
     if (metrs <= 2) {
         blockPrice = 1000
@@ -700,88 +774,8 @@ function calcPrice(elements, metrs, height, width) {
     } else if (metrs > 20) {
         blockPrice = 5000
     }
-    let result = Math.ceil((elements * 120 + metrs * 1000 + ((height / 100) * (width / 100)) * 6000 + blockPrice) / 100) * 100
-    // console.log(blockPrice)
+    let result = Math.floor((elements * 120 + metrs * 1000 + ((height / 100) * (width / 100)) * 6000 + blockPrice)/100) *100
+    console.log(blockPrice)
     return result
 }
 
-function createNewString() {
-    const neonString = createElement("div", "neonText");
-    productText.appendChild(neonString);
-
-    const neonStringParameters = createElement("div", "parametersItem")
-
-    const textInput = createElement("input", "input__text");
-    textInput.placeholder = "Введите текст";
-    textInput.addEventListener('keydown', (e) => {
-        if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
-            e.preventDefault();
-        }
-    })
-
-    const heightInput = createElement("input", "input__height");
-    heightInput.type = 'number';
-
-    const palette = createColorPalette(neonColors, neonString);
-    palette.addEventListener('click', (e) => {
-        console.log()
-        if (e.target.classList == "color"){
-            let color = e.target.style.backgroundColor
-            changeNeonColor(neonString, color)
-        }
-    })
-
-    heightInput.addEventListener('input', (e) => {
-        neonString.style.fontSize = `${+e.target.value * 4}px`;
-        sum()
-    })
-    textInput.addEventListener('input', (e) => {
-        e.preventDefault();
-        neonString.textContent = e.target.value
-        sum()
-    })
-
-    
-    neonStringParameters.appendChild(textInput);
-    neonStringParameters.appendChild(heightInput);
-    neonStringParameters.appendChild(palette);
-    productValues.appendChild(neonStringParameters);
-    if (neonString.previousElementSibling.classList == "neonText") {
-        addSiblingTextStyles(neonString);
-        heightInput.value = neonStringParameters.previousElementSibling.querySelector(".input__height").value;
-    }
-}
-
-//------------------------------------------------------------
-
-function createElement(tag, elClass) {
-    const el = document.createElement(tag);
-    el.classList.add(elClass)
-    return el
-}
-
-function addSiblingTextStyles(el) {
-    el.style.color = el.previousElementSibling.style.color;
-    el.style.textShadow = el.previousElementSibling.style.textShadow;
-    el.style.fontSize = el.previousElementSibling.style.fontSize
-}
-
-function createColorPalette(colorsPalette, text) {
-    const palette = createElement("div", "colors")
-    for (let color in colorsPalette) {
-        const colorItem = createColorItem(colorsPalette[color])
-        palette.appendChild(colorItem);
-    }
-    return palette
-}
-
-function changeNeonColor(text, colorCode) {
-    text.style.color = colorCode;
-    text.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
-}
-
-function createColorItem(color) {
-    const colorItem = createElement("div", "color")
-    colorItem.style.backgroundColor = color;
-    return colorItem
-}
