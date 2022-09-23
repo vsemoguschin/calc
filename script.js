@@ -294,6 +294,10 @@ const comfortaa = {
         l: 0.055,
         el: 1
     },
+    ":": {
+        l: 0.11,
+        el: 2
+    },
     "_": {
         l: 0.677,
         el: 1
@@ -581,117 +585,33 @@ const neonColors = {
 }
 
 
-const metrs = document.querySelector(".m");
+const metrsText = document.querySelector(".m");
 const els = document.querySelector(".el");
 const workPrice = document.querySelector(".work");
 const productWidth = document.querySelector('.product__width');
 const productHeight = document.querySelector('.product__height');
-const addNewString = document.querySelector(".input__add");
+const addNewString = document.querySelector(".addNewString");
 const productBlock = document.querySelector(".product");
 const price = document.querySelector(".client__new-price");
 const oldPrice = document.querySelector(".client__old-price");
 const productText = document.querySelector(".product__text");
 const optPrice = document.querySelector(".optPrice");
+const productInputs = document.querySelector('.parametrsInput');
 
-//Расчет длины и ширины
+createNewString()
+addNewString.addEventListener('click', createNewString)
 
+//Расчет длины
 function calcWidth() {
     let width = productBlock.getBoundingClientRect().width
     return width
 }
 
-//----------------------------------------------------------------
-const productValues = document.querySelector('.productParameters');
-
-addNewString.addEventListener('click', createNewString)
-
-createString()
-
-function createString() {
-    const previewString = document.createElement('div')
-    previewString.classList.add('neonText');
-
-    productText.appendChild(previewString);
-    // previewString.style.color = previewString.previousElementSibling.style.color;
-    // previewString.style.textShadow = previewString.previousElementSibling.style.textShadow;
-    // previewString.style.fontSize = previewString.previousElementSibling.style.fontSize
-
-    const input = document.createElement('div');
-    input.classList.add('parametersItem');
-
-    const textInput = document.createElement('input');
-    textInput.classList.add('input__text');
-    textInput.placeholder = 'Введите текст';
-    textInput.addEventListener('keydown', (e) => {
-        if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
-            e.preventDefault()
-        }
-    })
-    textInput.value = 'HELLO!'
-    previewString.textContent = textInput.value;
-
-    const heightInput = document.createElement('input');
-    heightInput.classList.add('input__height');
-    heightInput.type = 'number'
-
-    const palette = createColorPalette(neonColors, previewString);
-
-    input.appendChild(textInput);
-    input.appendChild(heightInput);
-    input.appendChild(palette);
-    productValues.appendChild(input);
-
-    const prevHeightValue = previewString.getBoundingClientRect().height;
-
-    heightInput.value = 10;
-    heightInput.addEventListener('input', (e) => {
-        previewString.style.fontSize = `${+e.target.value * 4}px`;
-        sum()
-    })
-    textInput.addEventListener('input', (e) => {
-        e.preventDefault();
-        previewString.textContent = e.target.value
-        sum()
-    })
-
-}
-
-
-function sum() {
-    const textInputs = document.querySelectorAll('.input__text');
-    let m = 0;
-    let elements = 1;
-    let height = 1;
-    let width = Math.ceil(calcWidth() / 4);
-    textInputs.forEach(el => {
-        let a = el.value.split('');
-        for (let i = 0; i < a.length; i++) {
-            if (comfortaa[a[i]]) {
-                m = m + comfortaa[a[i]].l * el.nextElementSibling.value;
-                elements = elements + comfortaa[a[i]].el
-            }
-        }
-        if (el.value) {
-            // console.log(el.value, m*el.nextElementSibling.value)
-            // console.log(el.value, elements)
-            height = height + +el.nextElementSibling.value + 1
-            productHeight.textContent = height + ' см'
-            els.textContent = elements
-            // productHeight.textContent = Math.ceil(calcHeight() / 4) + 2 + ' см'
-            productWidth.textContent = width + ' см'
-            metrs.textContent = Math.ceil(m) / 100;
-        }
-        optPrice.textContent = calcPrice(elements, Math.ceil(m) / 100, height, width)
-        price.textContent = Math.ceil(calcPrice(elements, Math.ceil(m) / 100, height, width) * 1.2)
-        oldPrice.textContent = Math.ceil(calcPrice(elements, Math.ceil(m) / 100, height, width) * 1.4)
-    })
-}
-sum()
-
+//Расчет стоимости
 function calcPrice(elements, metrs, height, width) {
     // console.log(elements, metrs, height, width)
     let blockPrice = 0;
-    if (metrs <= 2) {
+    if (metrs <= 2 && metrs > 0) {
         blockPrice = 1000
     } else if (metrs > 2 && metrs <= 10) {
         blockPrice = 2000
@@ -699,9 +619,11 @@ function calcPrice(elements, metrs, height, width) {
         blockPrice = 3000
     } else if (metrs > 20) {
         blockPrice = 5000
+    } else {
+        blockPrice = 0
+        return 0
     }
     let result = Math.ceil((elements * 120 + metrs * 1000 + ((height / 100) * (width / 100)) * 6000 + blockPrice) / 100) * 100
-    // console.log(blockPrice)
     return result
 }
 
@@ -724,8 +646,7 @@ function createNewString() {
 
     const palette = createColorPalette(neonColors, neonString);
     palette.addEventListener('click', (e) => {
-        console.log()
-        if (e.target.classList == "color"){
+        if (e.target.classList == "color") {
             let color = e.target.style.backgroundColor
             changeNeonColor(neonString, color)
         }
@@ -733,26 +654,56 @@ function createNewString() {
 
     heightInput.addEventListener('input', (e) => {
         neonString.style.fontSize = `${+e.target.value * 4}px`;
-        sum()
+        calc()
     })
     textInput.addEventListener('input', (e) => {
-        e.preventDefault();
         neonString.textContent = e.target.value
-        sum()
+        calc()
     })
 
-    
+
     neonStringParameters.appendChild(textInput);
     neonStringParameters.appendChild(heightInput);
     neonStringParameters.appendChild(palette);
-    productValues.appendChild(neonStringParameters);
-    if (neonString.previousElementSibling.classList == "neonText") {
+    productInputs.appendChild(neonStringParameters);
+    if (productText.children.length != 1) {
         addSiblingTextStyles(neonString);
         heightInput.value = neonStringParameters.previousElementSibling.querySelector(".input__height").value;
+    } else {
+        heightInput.value = 10
+        textInput.value = "HELLO!"
+        neonString.textContent = textInput.value
     }
+    calc()
 }
 
-//------------------------------------------------------------
+function calc() {
+    const textInputs = document.querySelectorAll('.input__text');
+
+    let metrs = 0;
+    let elements = 1;
+    let height = 1;
+    let width = Math.ceil(calcWidth() / 4);
+    textInputs.forEach(el => {
+        if (el.value) {
+            let a = el.value.split('');
+            for (let i = 0; i < a.length; i++) {
+                if (comfortaa[a[i]]) {
+                    metrs = metrs + comfortaa[a[i]].l * el.nextElementSibling.value;
+                    elements = elements + comfortaa[a[i]].el
+                }
+            }
+            height = height + +el.nextElementSibling.value + 1
+        } 
+    })
+    productHeight.textContent = height + ' см'
+    els.textContent = elements
+    productWidth.textContent = width + ' см'
+    metrsText.textContent = Math.ceil(metrs) / 100;
+    optPrice.textContent = calcPrice(elements, Math.ceil(metrs) / 100, height, width)
+    price.textContent = Math.ceil(calcPrice(elements, Math.ceil(metrs) / 100, height, width) * 1.2)
+    oldPrice.textContent = Math.ceil(calcPrice(elements, Math.ceil(metrs) / 100, height, width) * 1.4)
+}
 
 function createElement(tag, elClass) {
     const el = document.createElement(tag);
@@ -761,12 +712,19 @@ function createElement(tag, elClass) {
 }
 
 function addSiblingTextStyles(el) {
-    el.style.color = el.previousElementSibling.style.color;
-    el.style.textShadow = el.previousElementSibling.style.textShadow;
-    el.style.fontSize = el.previousElementSibling.style.fontSize
+    if (el.previousElementSibling != undefined) {
+        el.style.color = el.previousElementSibling.style.color;
+        el.style.textShadow = el.previousElementSibling.style.textShadow;
+        el.style.fontSize = el.previousElementSibling.style.fontSize
+    } else {
+        let colorCode = neonColors.orange;
+        el.style.color = colorCode;
+        el.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
+        el.style.fontSize = 10
+    }
 }
 
-function createColorPalette(colorsPalette, text) {
+function createColorPalette(colorsPalette) {
     const palette = createElement("div", "colors")
     for (let color in colorsPalette) {
         const colorItem = createColorItem(colorsPalette[color])
@@ -775,13 +733,13 @@ function createColorPalette(colorsPalette, text) {
     return palette
 }
 
-function changeNeonColor(text, colorCode) {
-    text.style.color = colorCode;
-    text.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
-}
-
 function createColorItem(color) {
     const colorItem = createElement("div", "color")
     colorItem.style.backgroundColor = color;
     return colorItem
+}
+
+function changeNeonColor(text, colorCode) {
+    text.style.color = colorCode;
+    text.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
 }
