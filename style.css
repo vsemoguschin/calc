@@ -41,7 +41,7 @@ body {
     background-color: black;
 }
 
-.container {
+.wrapper {
     background-image: url(bg.png);
     background-size: cover;
     background-position: center;
@@ -49,8 +49,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    height: 100%;
-    padding-left: 30%;
+    min-height: 100%;
+    padding-left: 305px;
 }
 
 .parametrsOutput {
@@ -137,10 +137,6 @@ body {
     text-align: center;
 }
 
-.neonText{
-    
-}
-
 .product__height {
     font-size: 10px;
     writing-mode: tb-rl;
@@ -161,45 +157,11 @@ body {
 .product__height::after {
     content: ">";
 }
-.productParameters {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
-.parametrsInput{
-    margin-bottom: 10px;
-}
-
-.parametersItem {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.input__height {
-    width: 50px;
-    font-size: 20px;
-    border-radius: 5px;
-    text-align: center;
-    margin-right: 10px;
-}
-.input__text {
-    margin-right: 10px;
-    font-size: 20px;
-    display: flex;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.addNewString {
-    margin-bottom: 20px;
-    cursor: pointer;
-    text-decoration: underline;
-}
 
 .client__block {
     width: 300px;
+    height: 185px;
     border: 1px solid rgb(199, 33, 143);
     border-radius: 20px;
     padding: 10px;
@@ -214,7 +176,7 @@ body {
 .client__old-price {
     font-size: 30px;
     text-decoration: 2px line-through rgb(199, 33, 143);
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .client__old-price::after {
     content: " руб";
@@ -222,8 +184,70 @@ body {
 .client__new-price {
     font-size: 50px;
     color: rgb(42, 171, 231);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .client__new-price::after {
     content: " руб";
+}
+
+.productParameters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.parametrsInput{
+    margin-bottom: 10px;
+}
+
+.parametersItem {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input__text {
+    font-size: 20px;
+    display: flex;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.input__height {
+    width: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.addNewString {
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media(max-width:800px){
+    .wrapper{
+        padding-left: 0;
+        justify-content: flex-start;
+    }
+    .client__block{
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 15px 0;
+    }
+    .product{
+        margin: 100px 0;
+    }
+    .productParameters{
+        margin: auto 0 0;
+    }
+    .input__text{
+        width: 150px;
+    }
 }
