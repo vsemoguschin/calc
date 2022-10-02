@@ -96,11 +96,19 @@ const comfortaa = {
     },
     К: {
         l: 2.450,
-        el: 3
+        el: 3,
+        step: 168,
+        getLetter(x) {
+            return `<line class="cls-1" x1="${29.4 + x}" y1="43.7" x2="${29.4 + x}" y2="243.6" /><path class="cls-1" d="M${145 + x},43.7L${85 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${154.7 + x}" y1="243.6" x2="${73.4 + x}" y2="136.4" />`;
+        }
     },
     Л: {
         l: 2.224,
-        el: 1
+        el: 1,
+        step: 210.65,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${20.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/>`;
+        }
     },
     М: {
         l: 4.117,
@@ -392,7 +400,9 @@ const comfortaa = {
     },
     E: {
         l: 2.722,
-        el: 2
+        el: 2,
+        getLetter(x) {
+        }
     },
     F: {
         l: 2.070,
@@ -404,7 +414,9 @@ const comfortaa = {
     },
     H: {
         l: 2.696,
-        el: 3
+        el: 3,
+        getLetter(x) {
+        }
     },
     I: {
         l: 1.000,
@@ -420,7 +432,9 @@ const comfortaa = {
     },
     L: {
         l: 1.557,
-        el: 1
+        el: 1,
+        getLetter(x) {
+        }
     },
     M: {
         l: 4.117,
@@ -432,7 +446,9 @@ const comfortaa = {
     },
     O: {
         l: 3.147,
-        el: 1
+        el: 1,
+        getLetter(x) {
+        }
     },
     P: {
         l: 2.366,
@@ -774,9 +790,9 @@ function calc() {
                 }
             }
             height = height + +el.nextElementSibling.value + 1
-            // svgBlock.innerHTML = 
-            console.log(`<svg style="background - color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${makeSvg(el.value)}</g></g></svg>`)
         }
+        // svgBlock.innerHTML = `<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${makeSvg(el.value)}</g></g></svg>`;
+        console.log(`<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${makeSvg(el.value)}</g></g></svg>`)
 
     })
     productHeight.textContent = height + ' см'
@@ -828,14 +844,14 @@ function changeNeonColor(text, colorCode) {
 }
 
 function makeSvg(word) {
+    console.log(word)
     word = word.split('');
     let res = '';
     let pos = 0;
     word.forEach(el => {
-        if (comfortaa[el]) {
+        if (comfortaa[el].hasOwnProperty('getLetter')) {
             res = res + comfortaa[el].getLetter(pos)
             pos = pos + comfortaa[el].step
-
         }
     });
     return res
