@@ -4,47 +4,95 @@ let text = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 const comfortaa = {
     А: {
         l: 2.806,
-        el: 2
+        el: 2,
+        step: 210.65,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${20.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/><line class="cls-1" x1="${47.45 + x}" y1="181.41" x2="${163.55 + x}" y2="181.41"/>`;
+        }
     },
     Б: {
         l: 3.123,
-        el: 1
+        el: 1,
+        step: 165,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${140.33 + x},43.74H${39 + x}A18.66,18.66,0,0,0,${20.91 + x},62.4V225a18.65,18.65,0,0,0,18.66,18.66h59.3a49.76,49.76,0,0,0,49.76-49.76V181.41a49.76,49.76,0,0,0-49.76-49.76h-73" />`;
+        }
     },
     В: {
         l: 3.333,
-        el: 1
+        el: 1,
+        step: 156,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${39.6 + x},135h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${49.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V62.4c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
+        }
     },
     Г: {
         l: 1.523,
-        el: 1
+        el: 1,
+        step: 144,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${40 + x},250.7V69.6c0-10.4,8.4-18.8,18.8-18.8h93.2" />`;
+        }
     },
     Д: {
         l: 3.498,
-        el: 2
+        el: 2,
+        step: 214,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${52.2 + x},247.9l54.1-186.4c5.5-17.9,30-18.1,35.7-0.3l56.9,186.6" /><path class="cls-1" d="M${219.7 + x},292.2v-25.7c0-10.3-8.3-18.6-18.6-18.6h-151c-10.3,0-18.6,8.3-18.6,18.6v25.7"/>`;
+        }
     },
     Е: {
         l: 2.722,
-        el: 2
+        el: 2,
+        step: 182,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${170.9 + x},50.9H${55.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V232c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${131.9 + x}" y1="146.8" x2="${41.3 + x}" y2="146.8"/>`;
+        }
     },
     Ё: {
         l: 2.823,
-        el: 4
+        el: 4,
+        step: 182,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${170.9 + x},50.9H${55.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V232c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${131.9 + x}" y1="146.8" x2="${41.3 + x}" y2="146.8"/><line class="cls-1" x1="${73.8 + x}" y1="8.5" x2="${73.8 + x}" y2="18.5"/><line class="cls-1" x1="${135.4 + x}" y1="8.5" x2="${135.4 + x}" y2="18.5"/>`;
+        }
     },
     Ж: {
         l: 3.846,
-        el: 5
+        el: 5,
+        step: 260,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${245.8 + x},50.8l-45.7,65.5c-13.3,19.1-35.1,30.4-58.4,30.4h-7.6c-22.3,0-43.3-10.5-56.8-28.3L${26.3 + x},50.8" />
+        <line class="cls-1" x1="${20.3 + x}" y1="250.7" x2="${101.5 + x}" y2="143.4" />
+        <line class="cls-1" x1="${256.9 + x}" y1="250.7" x2="${175.6 + x}" y2="143.4" />
+        <line class="cls-1" x1="${138.6 + x}" y1="50.8" x2="${138.6 + x}" y2="146.8" />
+        <line class="cls-1" x1="${138.6 + x}" y1="154.8" x2="${138.6 + x}" y2="250.7" />`;
+        }
     },
     З: {
         l: 2.209,
-        el: 2
+        el: 2,
+        step: 157,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${46.7 + x},221c10.6,17.6,31.6,29.7,55.8,29.7c34.8,0,63-24.9,63-55.6s-28.2-55.6-63-55.6" /><path class="cls-1" d="M${140.6 + x},143.4c2.3-2.7,19.3-22.8,13.8-48.5c-5.5-25.7-30.6-43.1-55.8-44.1c-30.9-1.3-50,22.4-51.9,24.8" />`;
+        }
     },
     И: {
         l: 3.299,
-        el: 1
+        el: 1,
+        step: 218,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${76 + x},50.8V232c0,18.1,23.1,25.6,33.8,11L${200 + x},58.c10.7-14.6,33.8-7.1,33.8,11v181.1" />`;
+        }
     },
     Й: {
         l: 3.632,
-        el: 2
+        el: 2,
+        step: 218,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${76 + x},50.8V232c0,18.1,23.1,25.6,33.8,11L${200 + x},58.c10.7-14.6,33.8-7.1,33.8,11v181.1" /><path class="cls-1" d="M${182.4 + x},8.5L${171 + x},14.8c-12,6.6-26.5,6.6-38.4,0l-11.4-6.3" />`;
+        }
     },
     К: {
         l: 2.450,
@@ -584,7 +632,6 @@ const neonColors = {
     blue: '#009aff'
 }
 
-
 const metrsText = document.querySelector(".m");
 const els = document.querySelector(".el");
 const workPrice = document.querySelector(".work");
@@ -597,6 +644,8 @@ const oldPrice = document.querySelector(".client__old-price");
 const productText = document.querySelector(".product__text");
 const optPrice = document.querySelector(".optPrice");
 const productInputs = document.querySelector('.parametrsInput');
+const svgBlock = document.querySelector(".svgblok");
+
 
 createNewString()
 addNewString.addEventListener('click', createNewString)
@@ -604,7 +653,31 @@ addNewString.addEventListener('click', createNewString)
 //Расчет длины
 function calcWidth() {
     let width = productBlock.getBoundingClientRect().width
+    // console.log(width)
     return width
+
+    //вернуть в px
+    // productText.style.fontSize = `${+document.querySelector(".input__height").value * 4}px`;
+    // console.log(+document.querySelector(".input__height").value * 4)
+    // const pxWidth = productBlock.getBoundingClientRect().width
+    // console.log(pxWidth)
+    // productText.style.fontSize = "40px";
+    // correctSizes()
+    // return pxWidth
+}
+
+function correctSizes() {
+    const heightInputs = document.querySelectorAll(".input__height");
+    let minHeight = Infinity;
+    heightInputs.forEach(el => {
+        // console.log(el.value)
+        if (+el.value < minHeight) {
+            minHeight = el.value
+        }
+    })
+    let cof = minHeight / 40
+    console.log(cof)
+
 }
 
 //Расчет стоимости
@@ -627,6 +700,12 @@ function calcPrice(elements, metrs, height, width) {
     return result
 }
 
+function controlTextInput(key) {
+    if (!comfortaa[key] && key !== "Backspace" && key !== " ") {
+        return false
+    } else return key
+}
+
 function createNewString() {
     const neonString = createElement("div", "neonText");
     productText.appendChild(neonString);
@@ -636,9 +715,15 @@ function createNewString() {
     const textInput = createElement("input", "input__text");
     textInput.placeholder = "Введите текст";
     textInput.addEventListener('keydown', (e) => {
-        if (!comfortaa[e.key] && e.key !== "Backspace" && e.key !== " ") {
-            e.preventDefault();
+        if (!controlTextInput(e.key)) {
+            e.preventDefault()
+        } else {
+            controlTextInput()
         }
+    })
+    textInput.addEventListener('input', (e) => {
+        neonString.textContent = e.target.value
+        calc()
     })
 
     const heightInput = createElement("input", "input__height");
@@ -656,11 +741,6 @@ function createNewString() {
         neonString.style.fontSize = `${+e.target.value * 4}px`;
         calc()
     })
-    textInput.addEventListener('input', (e) => {
-        neonString.textContent = e.target.value
-        calc()
-    })
-
 
     neonStringParameters.appendChild(textInput);
     neonStringParameters.appendChild(heightInput);
@@ -673,8 +753,8 @@ function createNewString() {
         heightInput.value = 10
         textInput.value = "HELLO!"
         neonString.textContent = textInput.value
+        calc()
     }
-    calc()
 }
 
 function calc() {
@@ -694,7 +774,10 @@ function calc() {
                 }
             }
             height = height + +el.nextElementSibling.value + 1
-        } 
+            // svgBlock.innerHTML = 
+            console.log(`<svg style="background - color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${makeSvg(el.value)}</g></g></svg>`)
+        }
+
     })
     productHeight.textContent = height + ' см'
     els.textContent = elements
@@ -742,4 +825,18 @@ function createColorItem(color) {
 function changeNeonColor(text, colorCode) {
     text.style.color = colorCode;
     text.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
+}
+
+function makeSvg(word) {
+    word = word.split('');
+    let res = '';
+    let pos = 0;
+    word.forEach(el => {
+        if (comfortaa[el]) {
+            res = res + comfortaa[el].getLetter(pos)
+            pos = pos + comfortaa[el].step
+
+        }
+    });
+    return res
 }
