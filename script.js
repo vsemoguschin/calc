@@ -792,8 +792,7 @@ function calc() {
             height = height + +el.nextElementSibling.value + 1
         }
         // svgBlock.innerHTML = `<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${makeSvg(el.value)}</g></g></svg>`;
-        // console.log(`<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${makeSvg(el.value)}</g></g></svg>`)
-
+        makeSvg(el.value)
     })
     productHeight.textContent = height + ' см'
     els.textContent = elements
@@ -844,15 +843,21 @@ function changeNeonColor(text, colorCode) {
 }
 
 function makeSvg(word) {
-    console.log(word)
+    // console.log(word)
     word = word.split('');
     let res = '';
     let pos = 0;
     word.forEach(el => {
         if (comfortaa[el].hasOwnProperty('getLetter')) {
-            res = res + comfortaa[el].getLetter(pos)
-            pos = pos + comfortaa[el].step
+            if (comfortaa[el].getLetter(pos) != undefined) {
+                res = res + comfortaa[el].getLetter(pos)
+                pos = pos + comfortaa[el].step
+            }
+        } else {
         }
     });
-    return res
+    if (res != "") {
+        console.log(`<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`)
+    }
+
 }
