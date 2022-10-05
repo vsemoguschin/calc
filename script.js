@@ -5,9 +5,9 @@ const comfortaa = {
     А: {
         l: 2.806,
         el: 2,
-        step: 210.65,
+        step: 200,
         getLetter(x) {
-            return `<path class="cls-1" d="M${20.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/><line class="cls-1" x1="${47.45 + x}" y1="181.41" x2="${163.55 + x}" y2="181.41"/>`;
+            return `<path class="cls-1" d="M${5.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/><line class="cls-1" x1="${32.45 + x}" y1="181.41" x2="${147.55 + x}" y2="181.41"/>`;
         }
     },
     Б: {
@@ -15,7 +15,7 @@ const comfortaa = {
         el: 1,
         step: 165,
         getLetter(x) {
-            return `<path class="cls-1" d="M${140.33 + x},43.74H${39 + x}A18.66,18.66,0,0,0,${20.91 + x},62.4V225a18.65,18.65,0,0,0,18.66,18.66h59.3a49.76,49.76,0,0,0,49.76-49.76V181.41a49.76,49.76,0,0,0-49.76-49.76h-73" />`;
+            return `<path class="cls-1" d="M${135.33 + x},43.74H${34 + x}A18.66,18.66,0,0,0,${15.91 + x},62.4V225a18.65,18.65,0,0,0,18.66,18.66h59.3a49.76,49.76,0,0,0,49.76-49.76V181.41a49.76,49.76,0,0,0-49.76-49.76h-73" />`;
         }
     },
     В: {
@@ -23,15 +23,15 @@ const comfortaa = {
         el: 1,
         step: 156,
         getLetter(x) {
-            return `<path class="cls-1" d="M${39.6 + x},135h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${49.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V62.4c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
+            return `<path class="cls-1" d="M${30.6 + x},135h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${40.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V62.4c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
         }
     },
     Г: {
         l: 1.523,
         el: 1,
-        step: 144,
+        step: 164,
         getLetter(x) {
-            return `<path class="cls-1" d="M${40 + x},250.7V69.6c0-10.4,8.4-18.8,18.8-18.8h93.2" />`;
+            return `<path class="cls-1" d="M${20 + x},250.7V69.6c0-10.4,8.4-18.8,18.8-18.8h93.2" />`;
         }
     },
     Д: {
@@ -39,7 +39,7 @@ const comfortaa = {
         el: 2,
         step: 214,
         getLetter(x) {
-            return `<path class="cls-1" d="M${52.2 + x},247.9l54.1-186.4c5.5-17.9,30-18.1,35.7-0.3l56.9,186.6" /><path class="cls-1" d="M${219.7 + x},292.2v-25.7c0-10.3-8.3-18.6-18.6-18.6h-151c-10.3,0-18.6,8.3-18.6,18.6v25.7"/>`;
+            return `<path class="cls-1" d="M${32.2 + x},247.9l54.1-186.4c5.5-17.9,30-18.1,35.7-0.3l56.9,186.6" /><path class="cls-1" d="M${199.7 + x},292.2v-25.7c0-10.3-8.3-18.6-18.6-18.6h-151c-10.3,0-18.6,8.3-18.6,18.6v25.7"/>`;
         }
     },
     Е: {
@@ -47,7 +47,7 @@ const comfortaa = {
         el: 2,
         step: 182,
         getLetter(x) {
-            return `<path class="cls-1" d="M${170.9 + x},50.9H${55.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V232c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${131.9 + x}" y1="146.8" x2="${41.3 + x}" y2="146.8"/>`;
+            return `<path class="cls-1" d="M${150.9 + x},43.9H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V225c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/>`;
         }
     },
     Ё: {
@@ -55,13 +55,13 @@ const comfortaa = {
         el: 4,
         step: 182,
         getLetter(x) {
-            return `<path class="cls-1" d="M${170.9 + x},50.9H${55.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V232c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${131.9 + x}" y1="146.8" x2="${41.3 + x}" y2="146.8"/><line class="cls-1" x1="${73.8 + x}" y1="8.5" x2="${73.8 + x}" y2="18.5"/><line class="cls-1" x1="${135.4 + x}" y1="8.5" x2="${135.4 + x}" y2="18.5"/>`;
+            return `<path class="cls-1" d="M${150.9 + x},43.9H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V225c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/><line class="cls-1" x1="${63.8 + x}" y1="8.5" x2="${63.8 + x}" y2="18.5"/><line class="cls-1" x1="${125.4 + x}" y1="8.5" x2="${125.4 + x}" y2="18.5"/>`;
         }
     },
     Ж: {
         l: 3.846,
         el: 5,
-        step: 260,
+        step: 270,
         getLetter(x) {
             return `<path class="cls-1" d="M${245.8 + x},50.8l-45.7,65.5c-13.3,19.1-35.1,30.4-58.4,30.4h-7.6c-22.3,0-43.3-10.5-56.8-28.3L${26.3 + x},50.8" />
         <line class="cls-1" x1="${20.3 + x}" y1="250.7" x2="${101.5 + x}" y2="143.4" />
@@ -73,25 +73,25 @@ const comfortaa = {
     З: {
         l: 2.209,
         el: 2,
-        step: 157,
+        step: 147,
         getLetter(x) {
-            return `<path class="cls-1" d="M${46.7 + x},221c10.6,17.6,31.6,29.7,55.8,29.7c34.8,0,63-24.9,63-55.6s-28.2-55.6-63-55.6" /><path class="cls-1" d="M${140.6 + x},143.4c2.3-2.7,19.3-22.8,13.8-48.5c-5.5-25.7-30.6-43.1-55.8-44.1c-30.9-1.3-50,22.4-51.9,24.8" />`;
+            return `<path class="cls-1" d="M${16.7 + x},213c10.6,17.6,31.6,29.7,55.8,29.7c34.8,0,63-24.9,63-55.6s-28.2-55.6-63-55.6" /><path class="cls-1" d="M${110.6 + x},135.4c2.3-2.7,19.3-22.8,13.8-48.5c-5.5-25.7-30.6-43.1-55.8-44.1c-30.9-1.3-50,22.4-51.9,24.8" />`;
         }
     },
     И: {
         l: 3.299,
         el: 1,
-        step: 218,
+        step: 195,
         getLetter(x) {
-            return `<path class="cls-1" d="M${76 + x},50.8V232c0,18.1,23.1,25.6,33.8,11L${200 + x},58.c10.7-14.6,33.8-7.1,33.8,11v181.1" />`;
+            return `<path class="cls-1" d="M${20 + x},50.8V232c0,18.1,23.1,25.6,33.8,11l82.5-184.5c10.7-14.6,33.8-7.1,33.8,11v181.1" />`;
         }
     },
     Й: {
         l: 3.632,
         el: 2,
-        step: 218,
+        step: 195,
         getLetter(x) {
-            return `<path class="cls-1" d="M${76 + x},50.8V232c0,18.1,23.1,25.6,33.8,11L${200 + x},58.c10.7-14.6,33.8-7.1,33.8,11v181.1" /><path class="cls-1" d="M${182.4 + x},8.5L${171 + x},14.8c-12,6.6-26.5,6.6-38.4,0l-11.4-6.3" />`;
+            return `<path class="cls-1" d="M${20 + x},50.8V232c0,18.1,23.1,25.6,33.8,11l82.5-184.5c10.7-14.6,33.8-7.1,33.8,11v181.1" /><path class="cls-1" d="M${130 + x},8.5l-11.4,6.3c-12,6.6-26.5,6.6-38.4,0l-11.4-6.3" />`;
         }
     },
     К: {
@@ -99,7 +99,7 @@ const comfortaa = {
         el: 3,
         step: 168,
         getLetter(x) {
-            return `<line class="cls-1" x1="${29.4 + x}" y1="43.7" x2="${29.4 + x}" y2="243.6" /><path class="cls-1" d="M${145 + x},43.7L${85 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${154.7 + x}" y1="243.6" x2="${73.4 + x}" y2="136.4" />`;
+            return `<line class="cls-1" x1="${19.4 + x}" y1="43.7" x2="${19.4 + x}" y2="243.6" /><path class="cls-1" d="M${135 + x},43.7L${75 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${144.7 + x}" y1="243.6" x2="${63.4 + x}" y2="136.4" />`;
         }
     },
     Л: {
@@ -107,60 +107,120 @@ const comfortaa = {
         el: 1,
         step: 210.65,
         getLetter(x) {
-            return `<path class="cls-1" d="M${20.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/>`;
+            return `<path class="cls-1" d="M${5.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/>`;
         }
     },
     М: {
         l: 4.117,
-        el: 1
+        el: 1,
+        step: 225.65,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${21.7 + x},242.2V61.1c0-20.1,27.6-26.1,36.2-7.9l41.7,152.4c6.8,14.4,27.6,14.4,34.3-0.1l40.7-151.3c8.5-18.3,36.2-12.3,36.2,7.8v180.2" />`;
+        }
     },
     Н: {
         l: 2.696,
-        el: 3
+        el: 3,
+        step: 195,
+        getLetter(x) {
+            return `<line class="cls-1" x1="${18.5 + x}" y1="242.2" x2="${18.5 + x}" y2="42.3" /><line class="cls-1" x1="${165.6 + x}" y1="242.2" x2="${165.6 + x}" y2="42.3" /><line class="cls-1" x1="${22.9 + x}" y1="139.8" x2="${161.2 + x}" y2="139.8" />`;
+        }
     },
     О: {
         l: 3.147,
-        el: 1
+        el: 1,
+        step: 220,
+        getLetter(x) {
+            return `<circle class="cls-1" cx="${105.8 + x}" cy="150.8" r="99.9" />`;
+        }
     },
     П: {
         l: 2.616,
-        el: 1
+        el: 1,
+        step: 178,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${15 + x},250.7V69.4c0-10.3,8.4-18.6,18.8-18.6h100.6c10.4,0,18.8,8.3,18.8,18.6v181.3" />`;
+        }
     },
     Р: {
         l: 2.366,
-        el: 1
+        el: 1,
+        step: 150,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${15.5 + x},250.7V63c0-6.7,5.5-12.2,12.4-12.2H${75 + x}c27.9,0,50.6,22.4,50.6,50v17.5c0,27.6-22.6,50-50.6,50h-46.7" />`;
+        }
     },
     С: {
         l: 2.262,
-        el: 1
+        el: 1,
+        step: 210,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${175.9 + x},71.8C${158.8 + x},58.2,${137.1 + x},50,${113.5 + x},50C${58.1 + x},50,${13.2 + x},95,${13.2 + x},150.4s44.9,100.3,100.3,100.3c24.1,0,46.2-8.5,63.5-22.6" />`;
+        }
     },
     Т: {
         l: 1.788,
-        el: 2
+        el: 2,
+        step: 210,
+        getLetter(x) {
+            return `<line class="cls-1" x1="${20.4 + x}" y1="50.8" x2="${180.7 + x}" y2="50.8" /><line class="cls-1" x1="${100.6 + x}" y1="250.7" x2="${100.6 + x}" y2="54.4" />`;
+        }
     },
     У: {
         l: 2.199,
-        el: 3
+        el: 3,
+        step: 210,
+        getLetter(x) {
+            return `<line class="cls-1" x1="${13.2 + x}" y1="50.8" x2="${101.3 + x}" y2="200.4" /><path class="cls-1" d="M${170.9 + x},50.8L${92 + x}.8,229c-2.4,5.4-6.1,10.1-10.8,13.7l0,0c-11.8,9.3-28.1,10.6-41.2,3.3l-8.1-4.5" />
+            `;
+        }
     },
     Ф: {
         l: 3.551,
-        el: 3
+        el: 3,
+        step: 200,
+        getLetter(x) {
+            return `<line class="cls-1" x1="${98.1 + x}" y1="50.8" x2="${98.1 + x}" y2="250.7" />
+            <path class="cls-1" d="M${98.1 + x},69.9c-47.6,0-86.3,33.8-86.3,75.5s38.6,75.5,86.3,75.5" />
+            <path class="cls-1" d="M${98.1 + x},69.9c47.6,0,86.3,33.8,86.3,75.5s-38.6,75.5-86.3,75.5" />`;
+        }
     },
     Х: {
         l: 2.435,
-        el: 3
+        el: 3,
+        step: 200,
+        getLetter(x) {
+            return `<line class="cls-1" x1="${17.1 + x}" y1="50.8" x2="${165.6 + x}" y2="249.9" />
+            <line class="cls-1" x1="${88 + x}" y1="154.1" x2="${17.1 + x}" y2="249.9" />
+            <line class="cls-1" x1="${165.6 + x}" y1="50.8" x2="${94.4 + x}" y2="145.4" />`;
+        }
     },
     Ц: {
         l: 2.841,
-        el: 2
+        el: 2,
+        step: 200,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${20 + x},50.8v140.5c0,32.1,25.4,58.2,56.8,58.2h27.4h63c10.3,0,18.7,8.6,18.7,19.1V295" />
+            <line class="cls-1" x1="${161 + x}" y1="50.8" x2="${161 + x}" y2="240.4" />`;
+        }
     },
     Ч: {
         l: 2.111,
-        el: 2
+        el: 2,
+        step: 180,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${17.8 + x},50.8v61.4c0,31.1,25.3,56.4,56.4,56.4h71.3" />
+            <line class="cls-1" x1="${150.5 + x}" y1="50.8" x2="${150.5 + x}" y2="250.7" />`;
+        }
     },
     Ш: {
         l: 3.932,
-        el: 2
+        el: 2,
+        step: 240,
+        getLetter(x) {
+            return `<path class="cls-1" d="M${12 + x},50.8v179.4c0,11.3,9.2,20.5,20.5,20.5h166.4c11.3,0,20.5-9.2,20.5-20.5V50.8" />
+            <line class="cls-1" x1="${115.7 + x}" y1="50.8" x2="${115.7 + x}" y2="245.7" />`;
+        }
     },
     Щ: {
         l: 4.251,
@@ -640,12 +700,15 @@ const comfortaa = {
     },
 };
 const neonColors = {
-    orange: "orange",
-    pink: "rgb(255, 1, 221)",
-    green: "#04ff00",
     red: 'red',
+    darkBlue: '#0034ff',
+    green: "#04ff00",
+    orange: "orange",
+    blue: '#00aff6',
+    pink: "rgb(255, 1, 221)",
+    turquoise: '#00ffb9',
     white: 'white',
-    blue: '#009aff'
+    warmWhite: '#fcf6ba'
 }
 
 const metrsText = document.querySelector(".m");
@@ -740,6 +803,7 @@ function createNewString() {
     textInput.addEventListener('input', (e) => {
         neonString.textContent = e.target.value
         calc()
+        makeSvg(textInput.value)
     })
 
     const heightInput = createElement("input", "input__height");
@@ -761,7 +825,8 @@ function createNewString() {
     const copyBtn = createElement("button", "copyBtn");
     copyBtn.textContent = "SVG";
     copyBtn.addEventListener('click', (e) => {
-        // makeSvg(textInput.value)
+        navigator.clipboard.writeText(makeSvg(textInput.value))
+        downloadSVGFile(makeSvg(textInput.value), 'myfilename.svg', 'text/plain')
     })
     copyBtn.style.display = "none"
 
@@ -799,7 +864,6 @@ function calc() {
             }
             height = height + +el.nextElementSibling.value + 1
         }
-        //  makeSvg(el.value)
     })
     productHeight.textContent = height + ' см'
     els.textContent = elements
@@ -850,22 +914,58 @@ function changeNeonColor(text, colorCode) {
 }
 
 function makeSvg(word) {
-    console.log(word)
+    // console.log(word)
     word = word.split('');
     let res = '';
     let pos = 0;
-    word.forEach(el => {
+    word.forEach((el, i) => {
         if (comfortaa[el].hasOwnProperty('getLetter')) {
             if (comfortaa[el].getLetter(pos) != undefined) {
-                res = res + comfortaa[el].getLetter(pos)
-                pos = pos + comfortaa[el].step
+                if (el == "А" && word[i - 1] == "У") {
+                    res = res + comfortaa[el].getLetter(pos - 60)
+                    pos = pos + comfortaa[el].step - 60
+                } else if (el == "А" && word[i - 1] == "Р") {
+                    res = res + comfortaa[el].getLetter(pos - 35)
+                    pos = pos + comfortaa[el].step - 35
+                } else if (el == "А" && word[i - 1] == "Т") {
+                    res = res + comfortaa[el].getLetter(pos - 35)
+                    pos = pos + comfortaa[el].step - 35
+                } else if (el == "О" && word[i - 1] == "Т") {
+                    res = res + comfortaa[el].getLetter(pos - 35)
+                    pos = pos + comfortaa[el].step - 35
+                } else if (el == "Т" && word[i - 1] == "А") {
+                    res = res + comfortaa[el].getLetter(pos - 35)
+                    pos = pos + comfortaa[el].step - 35
+                } else {
+                    res = res + comfortaa[el].getLetter(pos)
+                    pos = pos + comfortaa[el].step
+                }
             }
         } else {
         }
     });
     if (res != "") {
-        svgBlock.innerHTML = `<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`;
-        console.log(`<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`)
+        // svgBlock.innerHTML = `<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`;
+        // console.log(`<svg xmlns="http://www.w3.org/2000/svg" ><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`)
+        return `<svg xmlns="http://www.w3.org/2000/svg" ><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`
     }
 
+}
+
+function downloadSVGFile(data, filename, type) {
+    var file = new Blob([data], { type: type });
+    if (window.navigator.msSaveOrOpenBlob) 
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+            url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
 }
