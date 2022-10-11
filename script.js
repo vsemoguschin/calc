@@ -7,7 +7,7 @@ const comfortaa = {
         el: 2,
         step: 200,
         getLetter(x) {
-            return `<path class="cls-1" d="M${5.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/><line class="cls-1" x1="${32.45 + x}" y1="181.41" x2="${147.55 + x}" y2="181.41"/>`;
+            return `<path class="cls-1" d="M${5.91 + x},250.7l68-187.8c5.8-16,26.1-16.2,32.2-0.3l71.5,188.1"/><line class="cls-1" x1="${32.45 + x}" y1="188.5" x2="${147.55 + x}" y2="188.5"/>`;
         }
     },
     Б: {
@@ -15,7 +15,7 @@ const comfortaa = {
         el: 1,
         step: 165,
         getLetter(x) {
-            return `<path class="cls-1" d="M${135.33 + x},43.74H${34 + x}A18.66,18.66,0,0,0,${15.91 + x},62.4V225a18.65,18.65,0,0,0,18.66,18.66h59.3a49.76,49.76,0,0,0,49.76-49.76V181.41a49.76,49.76,0,0,0-49.76-49.76h-73" />`;
+            return ` <path class="cls-1" d="M${133.7 + x},50.8H${32.9 + x}c-10.3,0-18.7,8.4-18.7,18.7V232c0,10.3,8.4,18.7,18.7,18.7h59.3c27.5,0,49.8-22.3,49.8-49.8v-12.4c0-27.5-22.3-49.8-49.8-49.8h-73" />`;
         }
     },
     В: {
@@ -23,7 +23,7 @@ const comfortaa = {
         el: 1,
         step: 156,
         getLetter(x) {
-            return `<path class="cls-1" d="M${30.6 + x},135h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${40.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V62.4c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
+            return `<path class="cls-1" d="M${30.6 + x},142.1h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${40.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V69.5c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
         }
     },
     Г: {
@@ -47,7 +47,7 @@ const comfortaa = {
         el: 2,
         step: 182,
         getLetter(x) {
-            return `<path class="cls-1" d="M${150.9 + x},43.9H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V225c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/>`;
+            return `<path class="cls-1" d="M${150.9 + x},50.8H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8v162.3c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/>`;
         }
     },
     Ё: {
@@ -55,7 +55,7 @@ const comfortaa = {
         el: 4,
         step: 182,
         getLetter(x) {
-            return `<path class="cls-1" d="M${150.9 + x},43.9H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8V225c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/><line class="cls-1" x1="${63.8 + x}" y1="8.5" x2="${63.8 + x}" y2="18.5"/><line class="cls-1" x1="${125.4 + x}" y1="8.5" x2="${125.4 + x}" y2="18.5"/>`;
+            return `<path class="cls-1" d="M${150.9 + x},50.8H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8v162.3c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/><line class="cls-1" x1="${63.8 + x}" y1="8.5" x2="${63.8 + x}" y2="18.5"/><line class="cls-1" x1="${125.4 + x}" y1="8.5" x2="${125.4 + x}" y2="18.5"/>`;
         }
     },
     Ж: {
@@ -73,9 +73,10 @@ const comfortaa = {
     З: {
         l: 2.209,
         el: 2,
-        step: 147,
+        step: 160,
         getLetter(x) {
-            return `<path class="cls-1" d="M${16.7 + x},213c10.6,17.6,31.6,29.7,55.8,29.7c34.8,0,63-24.9,63-55.6s-28.2-55.6-63-55.6" /><path class="cls-1" d="M${110.6 + x},135.4c2.3-2.7,19.3-22.8,13.8-48.5c-5.5-25.7-30.6-43.1-55.8-44.1c-30.9-1.3-50,22.4-51.9,24.8" />`;
+            return `<path class="cls-1" d="M${12.9 + x},221c10.6,17.6,31.6,29.7,55.8,29.7c34.8,0,63-24.9,63-55.6s-28.2-55.6-63-55.6" />
+            <path class="cls-1" d="M${106.8 + x},143.4c2.3-2.7,19.3-22.8,13.8-48.5c-5.5-25.7-30.6-43.1-55.8-44.1c-30.9-1.3-50,22.4-51.9,24.8" />`;
         }
     },
     И: {
@@ -99,7 +100,7 @@ const comfortaa = {
         el: 3,
         step: 168,
         getLetter(x) {
-            return `<line class="cls-1" x1="${19.4 + x}" y1="43.7" x2="${19.4 + x}" y2="243.6" /><path class="cls-1" d="M${135 + x},43.7L${75 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${144.7 + x}" y1="243.6" x2="${63.4 + x}" y2="136.4" />`;
+            return `<line class="cls-1" x1="${19.4 + x}" y1="50.8" x2="${19.4 + x}" y2="250.7" /><path class="cls-1" d="M${135 + x},43.7L${75 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${144.7 + x}" y1="250.7" x2="${63.4 + x}" y2="143.4" />`;
         }
     },
     Л: {
@@ -107,7 +108,7 @@ const comfortaa = {
         el: 1,
         step: 210.65,
         getLetter(x) {
-            return `<path class="cls-1" d="M${5.91 + x},243.61l68-187.76c5.8-16,26.12-16.19,32.16-.3l71.5,188.06"/>`;
+            return `<path class="cls-1" d="M${5.91 + x},250.7l68-187.8c5.8-16,26.1-16.2,32.2-0.3l71.5,188.1"/>`;
         }
     },
     М: {
@@ -115,7 +116,7 @@ const comfortaa = {
         el: 1,
         step: 225.65,
         getLetter(x) {
-            return `<path class="cls-1" d="M${21.7 + x},242.2V61.1c0-20.1,27.6-26.1,36.2-7.9l41.7,152.4c6.8,14.4,27.6,14.4,34.3-0.1l40.7-151.3c8.5-18.3,36.2-12.3,36.2,7.8v180.2" />`;
+            return `<path class="cls-1" d="M${11.7 + x},250.7V69.6c0-20.1,27.6-26.1,36.2-7.9l41.7,152.4c6.8,14.4,27.6,14.4,34.3-0.1l40.7-151.3c8.5-18.3,36.2-12.3,36.2,7.8v180.2" />`;
         }
     },
     Н: {
@@ -123,7 +124,7 @@ const comfortaa = {
         el: 3,
         step: 195,
         getLetter(x) {
-            return `<line class="cls-1" x1="${18.5 + x}" y1="242.2" x2="${18.5 + x}" y2="42.3" /><line class="cls-1" x1="${165.6 + x}" y1="242.2" x2="${165.6 + x}" y2="42.3" /><line class="cls-1" x1="${22.9 + x}" y1="139.8" x2="${161.2 + x}" y2="139.8" />`;
+            return `<line class="cls-1" x1="${18.5 + x}" y1="250.7" x2="${18.5 + x}" y2="50.8" /><line class="cls-1" x1="${165.6 + x}" y1="250.7" x2="${165.6 + x}" y2="50.8" /><line class="cls-1" x1="${22.9 + x}" y1="148.3" x2="${161.2 + x}" y2="148.3" />`;
         }
     },
     О: {
@@ -169,7 +170,7 @@ const comfortaa = {
     У: {
         l: 2.199,
         el: 3,
-        step: 210,
+        step: 195,
         getLetter(x) {
             return `<line class="cls-1" x1="${13.2 + x}" y1="50.8" x2="${101.3 + x}" y2="200.4" /><path class="cls-1" d="M${170.9 + x},50.8L${92 + x}.8,229c-2.4,5.4-6.1,10.1-10.8,13.7l0,0c-11.8,9.3-28.1,10.6-41.2,3.3l-8.1-4.5" />
             `;
@@ -227,9 +228,9 @@ const comfortaa = {
         el: 3,
         step: 260,
         getLetter(x) {
-          return `<path class="cls-1" d="M${8.14+x},50.83v181.51c0,10.51,8.42,19.03,18.81,19.03h192.94c10.39,0,18.81,8.52,18.81,19.03V295"/>
-                <line class="cls-1" x1="${110.98+x}" y1="50.83" x2="${110.98+x}" y2="245.72" />
-                <line class="cls-1" x1="${213.26+x}" y1="50.83" x2="${213.26+x}" y2="245.72" />`;
+            return `<path class="cls-1" d="M${8.14 + x},50.83v181.51c0,10.51,8.42,19.03,18.81,19.03h192.94c10.39,0,18.81,8.52,18.81,19.03V295"/>
+                <line class="cls-1" x1="${110.98 + x}" y1="50.83" x2="${110.98 + x}" y2="245.72" />
+                <line class="cls-1" x1="${213.26 + x}" y1="50.83" x2="${213.26 + x}" y2="245.72" />`;
         },
     },
     Ъ: {
@@ -237,7 +238,7 @@ const comfortaa = {
         el: 1,
         step: 215,
         getLetter(x) {
-          return `<path class="cls-1" d="M${11.97+x},50.83h47.54c10.39,0,18.81,8.39,18.81,18.73v162.41c0,10.34,8.42,18.73,18.81,18.73h50.86c26.26,0,47.55-21.2,47.55-47.36v-16.52c0-26.15-21.29-47.36-47.55-47.36h-63.03"/>`;
+            return `<path class="cls-1" d="M${11.97 + x},50.83h47.54c10.39,0,18.81,8.39,18.81,18.73v162.41c0,10.34,8.42,18.73,18.81,18.73h50.86c26.26,0,47.55-21.2,47.55-47.36v-16.52c0-26.15-21.29-47.36-47.55-47.36h-63.03"/>`;
         },
     },
     Ы: {
@@ -245,8 +246,8 @@ const comfortaa = {
         el: 2,
         step: 200,
         getLetter(x) {
-          return `<path class="cls-1" d="M${6.1+x},50.83v180.91c0,10.47,8.42,18.96,18.81,18.96h50.86c26.26,0,47.55-21.47,47.55-47.95v-16.73c0-26.48-21.29-47.95-47.55-47.95h-63.03"/>
-          <line class="cls-1" x1="${174.18+x}" y1="50.83" x2="${174.18+x}" y2="250.7" />`;
+            return `<path class="cls-1" d="M${6.1 + x},50.83v180.91c0,10.47,8.42,18.96,18.81,18.96h50.86c26.26,0,47.55-21.47,47.55-47.95v-16.73c0-26.48-21.29-47.95-47.55-47.95h-63.03"/>
+          <line class="cls-1" x1="${174.18 + x}" y1="50.83" x2="${174.18 + x}" y2="250.7" />`;
         },
     },
     Ь: {
@@ -254,17 +255,17 @@ const comfortaa = {
         el: 1,
         step: 150,
         getLetter(x) {
-          return `<path class="cls-1" d="M${6.1+x},50.83v180.91c0,10.47,8.42,18.96,18.81,18.96h50.86c26.26,0,47.55-21.47,47.55-47.95v-16.73c0-26.48-21.29-47.95-47.55-47.95h-63.03"/>`;
+            return `<path class="cls-1" d="M${6.1 + x},50.83v180.91c0,10.47,8.42,18.96,18.81,18.96h50.86c26.26,0,47.55-21.47,47.55-47.95v-16.73c0-26.48-21.29-47.95-47.55-47.95h-63.03"/>`;
         },
     },
     Э: {
         l: 2.828,
         el: 2,
-        step: 180,
+        step: 200,
         getLetter(x) {
-          return `<path
-          class="cls-1" d="M${7.64+x},228.88c17.16,13.66,38.92,21.82,62.59,21.82c55.42,0,100.34-44.74,100.34-99.94s-44.92-99.94-100.34-99.94c-23.48,0-45.07,8.03-62.16,21.48" />
-          <line class="cls-1" x1="${48.97+x}" y1="148.7" x2="${163.97+x}" y2="148.7" />`;
+            return `<path
+          class="cls-1" d="M${7.64 + x},228.88c17.16,13.66,38.92,21.82,62.59,21.82c55.42,0,100.34-44.74,100.34-99.94s-44.92-99.94-100.34-99.94c-23.48,0-45.07,8.03-62.16,21.48" />
+          <line class="cls-1" x1="${48.97 + x}" y1="148.7" x2="${163.97 + x}" y2="148.7" />`;
         },
     },
     Ю: {
@@ -272,9 +273,9 @@ const comfortaa = {
         el: 3,
         step: 280,
         getLetter(x) {
-          return `<line class="cls-1" x1="${6.8+x}" y1="50.83" x2="${6.8+x}" y2="250.7" />
-          <ellipse class="cls-1" cx="${164.67+x}" cy="150.76" rx="100.34" ry="99.94" />
-          <line class="cls-1" x1="${11.22+x}" y1="148.7" x2="${60.43+x}" y2="148.7" />`;
+            return `<line class="cls-1" x1="${6.8 + x}" y1="50.83" x2="${6.8 + x}" y2="250.7" />
+          <ellipse class="cls-1" cx="${164.67 + x}" cy="150.76" rx="100.34" ry="99.94" />
+          <line class="cls-1" x1="${11.22 + x}" y1="148.7" x2="${60.43 + x}" y2="148.7" />`;
         },
     },
     Я: {
@@ -282,8 +283,8 @@ const comfortaa = {
         el: 2,
         step: 150,
         getLetter(x) {
-          return `<path class="cls-1" d="M${126.73+x},250.7l0.01-181.06c0-10.39-8.42-18.81-18.81-18.81h-50.86c-26.26,0-47.55,21.29-47.55,47.55v16.59c0,26.26,21.29,47.55,47.55,47.55h63.03"/>
-                 <line class="cls-1" x1="${9.52+x}" y1="250.7" x2="${39.94+x}" y2="163.9" />`;
+            return `<path class="cls-1" d="M${126.73 + x},250.7l0.01-181.06c0-10.39-8.42-18.81-18.81-18.81h-50.86c-26.26,0-47.55,21.29-47.55,47.55v16.59c0,26.26,21.29,47.55,47.55,47.55h63.03"/>
+                 <line class="cls-1" x1="${9.52 + x}" y1="250.7" x2="${39.94 + x}" y2="163.9" />`;
         },
     },
     а: {
@@ -844,6 +845,7 @@ function createNewString() {
 
     const heightInput = createElement("input", "input__height");
     heightInput.type = 'number';
+    heightInput.min = 5;
 
     const palette = createColorPalette(neonColors, neonString);
     palette.addEventListener('click', (e) => {
@@ -857,12 +859,18 @@ function createNewString() {
         neonString.style.fontSize = `${+e.target.value * 4}px`;
         calc()
     })
+    heightInput.addEventListener('keydown', (e) => {
+        console.log(e)
+        if (!e.key >= 5) {
+            e.preventDefault()
+        }
+    })
 
     const copyBtn = createElement("button", "copyBtn");
     copyBtn.textContent = "SVG";
     copyBtn.addEventListener('click', (e) => {
-        navigator.clipboard.writeText(makeSvg(textInput.value))
-        downloadSVGFile(makeSvg(textInput.value), 'myfilename.svg', 'text/plain')
+        // navigator.clipboard.writeText(makeSvg(textInput.value))
+        downloadSVGFile(makeSvg(textInput.value), 'text.svg', 'text/plain')
     })
     copyBtn.style.display = "none"
 
@@ -990,7 +998,7 @@ function makeSvg(word) {
 
 function downloadSVGFile(data, filename, type) {
     var file = new Blob([data], { type: type });
-    if (window.navigator.msSaveOrOpenBlob) 
+    if (window.navigator.msSaveOrOpenBlob)
         window.navigator.msSaveOrOpenBlob(file, filename);
     else { // Others
         var a = document.createElement("a"),
@@ -1005,3 +1013,5 @@ function downloadSVGFile(data, filename, type) {
         }, 0);
     }
 }
+
+
