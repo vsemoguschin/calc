@@ -1153,7 +1153,7 @@ function createNewString() {
         // navigator.clipboard.writeText(makeSvg(textInput.value))
         downloadSVGFile(makeSvg(textInput.value), 'text.svg', 'text/plain')
     })
-    copyBtn.style.display = "none"
+    // copyBtn.style.display = "none"
 
     neonStringParameters.appendChild(textInput);
     neonStringParameters.appendChild(heightInput);
