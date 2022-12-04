@@ -1183,7 +1183,7 @@ function calc() {
             let a = el.value.split('');
             for (let i = 0; i < a.length; i++) {
                 if (comfortaa[a[i]]) {
-                    metrs = metrs + comfortaa[a[i]].l * el.nextElementSibling.value;
+                    metrs = metrs + comfortaa[a[i]].l * el.nextElementSibling.value/1.3;
                     elements = elements + comfortaa[a[i]].el
                 }
             }
@@ -1272,7 +1272,7 @@ function makeSvg(word) {
     if (res != "") {
         // svgBlock.innerHTML = `<svg style="background-color: wheat;height:100px; width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 307.14"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`;
         // console.log(`<svg xmlns="http://www.w3.org/2000/svg" ><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`)
-        return `<svg xmlns="http://www.w3.org/2000/svg" ><defs><style>.cls-1,.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:17.01px;}.cls-2{stroke-width:2.83px;}</style></defs><title>A</title><g id="Layer_2" data-name="Layer 2"><g id="АЛФАВИТ">${res}</g></g></svg>`
+        return `<svg xmlns="http://www.w3.org/2000/svg" ><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-linecap:round;stroke-width:17.01px;}</style></defs>${res}</svg>`
     }
 
 }
