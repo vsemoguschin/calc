@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700);
 
+@font-face {
+    font-family: 'Corinthia';
+    src: url(/fonts/corinthia.ttf);
+}
+
+;
+
 *,
 *:before,
 *::after {
@@ -8,17 +15,21 @@
     border: 0;
     box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
 }
+
 ul,
 ol,
 li {
     list-style: none;
 }
+
 img {
     vertical-align: none;
 }
+
 h1,
 h2,
 h3,
@@ -28,10 +39,12 @@ h6 {
     font-weight: inherit;
     font-size: inherit;
 }
+
 html,
 body {
     height: 100%;
 }
+
 html,
 body {
     font-family: "Comfortaa";
@@ -67,6 +80,7 @@ body {
     gap: 5px;
     align-items: center;
 }
+
 .color {
     height: 15px;
     width: 15px;
@@ -87,7 +101,7 @@ body {
     content: " р(работа)";
 }
 
-.optPrice::after{
+.optPrice::after {
     content: "руб(оптовая цена)";
 }
 
@@ -119,6 +133,7 @@ body {
     border-left: 1px solid rgba(136, 136, 136, 0.308);
     border-right: 1px solid rgba(136, 136, 136, 0.308);
 }
+
 .product__width::before {
     content: "<";
 }
@@ -152,9 +167,11 @@ body {
     justify-content: space-between;
     /* flex-direction: column; */
 }
+
 .product__height::before {
     content: "<";
 }
+
 .product__height::after {
     content: ">";
 }
@@ -179,14 +196,17 @@ body {
     text-decoration: 2px line-through rgb(199, 33, 143);
     margin: 5px 0;
 }
+
 .client__old-price::after {
     content: " руб";
 }
+
 .client__new-price {
     font-size: 50px;
     color: rgb(42, 171, 231);
     margin-bottom: 5px;
 }
+
 .client__new-price::after {
     content: " руб";
 }
@@ -198,7 +218,22 @@ body {
     margin-bottom: 10px;
 }
 
-.parametrsInput{
+.productFonts {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+
+.fontItem{
+    cursor: pointer;
+}
+
+.fontItem.active{
+    text-shadow: 0 0 10px orange,0 0 20px orange,0 0 30px orange,0 0 40px orange;
+}
+
+.parametrsInput {
     margin-bottom: 10px;
 }
 
@@ -231,7 +266,7 @@ body {
     text-decoration: underline;
 }
 
-.copyBtn{
+.copyBtn {
     cursor: pointer;
     border: 1px solid rgb(199, 33, 143);
     border-radius: 5px;
@@ -239,24 +274,28 @@ body {
     color: orange;
 }
 
-@media(max-width:800px){
-    .wrapper{
+@media(max-width:800px) {
+    .wrapper {
         padding-left: 0;
         justify-content: flex-start;
     }
-    .client__block{
+
+    .client__block {
         position: relative;
         left: 0;
         top: 0;
         margin: 15px 0;
     }
-    .product{
+
+    .product {
         margin: 100px 0;
     }
-    .productParameters{
+
+    .productParameters {
         margin: auto 0 0;
     }
-    .input__text{
+
+    .input__text {
         width: 150px;
     }
 }
