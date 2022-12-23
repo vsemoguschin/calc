@@ -1934,7 +1934,6 @@ const fontsBD = {
             },
         },
         y: {
-            l: 1.774,
             l: 2.09,
             el: 2,
             step: 150,
@@ -2049,7 +2048,7 @@ function changeFont(font) {
     productText.style.fontFamily = font.target.textContent;
     if (font.target.textContent == 'Corinthia') {
         neonTexts.forEach((text) => {
-            text.style.padding = '0 .5rem 0 0'
+            text.style.padding = '0 .5rem 0 0.1rem'
         })
     } else {
         neonTexts.forEach((text) => {
@@ -2166,7 +2165,7 @@ function createNewString() {
     copyBtn.textContent = "SVG";
     copyBtn.addEventListener('click', (e) => {
         // navigator.clipboard.writeText(makeSvg(textInput.value))
-        // downloadSVGFile(makeSvg(textInput.value), 'text.svg', 'text/plain');
+        downloadSVGFile(makeSvg(textInput.value), 'text.svg', 'text/plain');
     })
     // copyBtn.style.display = "none"
 
@@ -2259,31 +2258,31 @@ function changeNeonColor(text, colorCode) {
 }
 
 function makeSvg(word) {
-    // console.log(word)
+    console.log(word)
     word = word.split('');
     let res = '';
     let pos = 0;
     word.forEach((el, i) => {
-        if (comfortaa[el].hasOwnProperty('getLetter')) {
-            if (comfortaa[el].getLetter(pos) != undefined) {
+        if (fontsBD['Comfortaa'][el].hasOwnProperty('getLetter')) {
+            if (fontsBD['Comfortaa'][el].getLetter(pos) != undefined) {
                 if (el == "А" && word[i - 1] == "У") {
-                    res = res + comfortaa[el].getLetter(pos - 60);
-                    pos = pos + comfortaa[el].step - 60;
+                    res = res + fontsBD['Comfortaa'][el].getLetter(pos - 60);
+                    pos = pos + fontsBD['Comfortaa'][el].step - 60;
                 } else if (el == "А" && word[i - 1] == "Р") {
-                    res = res + comfortaa[el].getLetter(pos - 35);
-                    pos = pos + comfortaa[el].step - 35;
+                    res = res + fontsBD['Comfortaa'][el].getLetter(pos - 35);
+                    pos = pos + fontsBD['Comfortaa'][el].step - 35;
                 } else if (el == "А" && word[i - 1] == "Т") {
-                    res = res + comfortaa[el].getLetter(pos - 35);
-                    pos = pos + comfortaa[el].step - 35;
+                    res = res + fontsBD['Comfortaa'][el].getLetter(pos - 35);
+                    pos = pos + fontsBD['Comfortaa'][el].step - 35;
                 } else if (el == "О" && word[i - 1] == "Т") {
-                    res = res + comfortaa[el].getLetter(pos - 35);
-                    pos = pos + comfortaa[el].step - 35;
+                    res = res + fontsBD['Comfortaa'][el].getLetter(pos - 35);
+                    pos = pos + fontsBD['Comfortaa'][el].step - 35;
                 } else if (el == "Т" && word[i - 1] == "А") {
-                    res = res + comfortaa[el].getLetter(pos - 35);
-                    pos = pos + comfortaa[el].step - 35;
+                    res = res + fontsBD['Comfortaa'][el].getLetter(pos - 35);
+                    pos = pos + fontsBD['Comfortaa'][el].step - 35;
                 } else {
-                    res = res + comfortaa[el].getLetter(pos);
-                    pos = pos + comfortaa[el].step;
+                    res = res + fontsBD['Comfortaa'][el].getLetter(pos);
+                    pos = pos + fontsBD['Comfortaa'][el].step;
                 }
             }
         } else {
