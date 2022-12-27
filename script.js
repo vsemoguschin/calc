@@ -3,21 +3,67 @@ let ABV = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 let text = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 let fonts = ['Comfortaa', 'Corinthia'];
 
-const neonColors = {
-    red: 'red',
-    darkBlue: '#0034ff',
-    green: "#04ff00",
-    orange: "orange",
-    blue: '#00aff6',
-    pink: "rgb(255, 1, 221)",
-    turquoise: '#00ffb9',
-    white: 'white',
-    warmWhite: '#fcf6ba'
-}
+const neonColors = [
+     {
+        name: 'Красный',
+        color: 'rgb(255, 42, 42)',
+        glow: '0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red',
+    },
+    {
+        name: 'Синий',
+        color: 'rgb(45, 88, 255)',
+        glow: '0 0 10px rgb(0, 52, 255), 0 0 20px rgb(0, 52, 255), 0 0 30px rgb(0, 52, 255), 0 0 40px rgb(0, 52, 255)',
+    },
+    {
+        name: 'Зелёный',
+        color: "rgb(80, 255, 77)",
+        glow: '0 0 10px rgb(4, 255, 0), 0 0 20px rgb(4, 255, 0), 0 0 30px rgb(4, 255, 0), 0 0 40px rgb(4, 255, 0)',
+    },
+    {
+        name: 'Оранжевый',
+        color: "rgb(255, 182, 49)",
+        glow: '0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange',
+    },
+    {
+        name: 'Желтый',
+        color: 'yellow',
+        glow: '0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow',
+    },
+    {
+        name: 'Фиолетовый',
+        color: 'rgb(184, 104, 255)',
+        glow: '0 0 10px rgb(132, 0, 249), 0 0 20px rgb(132, 0, 249), 0 0 30px rgb(132, 0, 249), 0 0 40px rgb(132, 0, 249)',
+    },
+    {
+        name: 'Голубой',
+        color: 'rgb(74, 203, 255)',
+        glow: '0 0 10px rgb(0, 175, 246), 0 0 20px rgb(0, 175, 246), 0 0 30px rgb(0, 175, 246), 0 0 40px rgb(0, 175, 246)',
+    },
+    {
+        name: 'Розовый',
+        color: "rgb(255, 40, 226)",
+        glow: '0 0 10px rgb(255, 1, 221), 0 0 20px rgb(255, 1, 221), 0 0 30px rgb(255, 1, 221), 0 0 40px rgb(255, 1, 221)',
+    },
+    {
+        name: 'Бирюзовый',
+        color: 'rgb(0, 255, 185)',
+        glow: '0 0 10px rgb(0, 255, 185), 0 0 20px rgb(0, 255, 185), 0 0 30px rgb(0, 255, 185), 0 0 40px rgb(0, 255, 185)',
+    },
+    {
+        name:'Белый',
+        color: 'white',
+        glow: '0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white',
+    },
+    {
+        name: 'Тёплый белый',
+        color: 'rgb(252, 246, 186)',
+        glow: '0 0 10px rgb(252, 246, 186), 0 0 20px rgb(252, 246, 186), 0 0 30px rgb(252, 246, 186), 0 0 40px rgb(252, 246, 186)',
+    }
+];
 
 const fontsBD = {
-    ['Comfortaa'] :{
-        А: {
+    ['Comfortaa']: {
+        ['А']: {
             l: 2.806,
             el: 2,
             step: 200,
@@ -25,7 +71,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${5.91 + x},250.7l68-187.8c5.8-16,26.1-16.2,32.2-0.3l71.5,188.1"/><line class="cls-1" x1="${32.45 + x}" y1="188.5" x2="${147.55 + x}" y2="188.5"/>`;
             }
         },
-        Б: {
+        ['Б']: {
             l: 3.123,
             el: 1,
             step: 165,
@@ -33,7 +79,7 @@ const fontsBD = {
                 return ` <path class="cls-1" d="M${133.7 + x},50.8H${32.9 + x}c-10.3,0-18.7,8.4-18.7,18.7V232c0,10.3,8.4,18.7,18.7,18.7h59.3c27.5,0,49.8-22.3,49.8-49.8v-12.4c0-27.5-22.3-49.8-49.8-49.8h-73" />`;
             }
         },
-        В: {
+        ['В']: {
             l: 3.333,
             el: 1,
             step: 156,
@@ -41,7 +87,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${30.6 + x},142.1h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${40.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V69.5c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
             }
         },
-        Г: {
+        ['Г']: {
             l: 1.523,
             el: 1,
             step: 164,
@@ -49,7 +95,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${20 + x},250.7V69.6c0-10.4,8.4-18.8,18.8-18.8h93.2" />`;
             }
         },
-        Д: {
+        ['Д']: {
             l: 3.498,
             el: 2,
             step: 214,
@@ -57,7 +103,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${32.2 + x},247.9l54.1-186.4c5.5-17.9,30-18.1,35.7-0.3l56.9,186.6" /><path class="cls-1" d="M${199.7 + x},292.2v-25.7c0-10.3-8.3-18.6-18.6-18.6h-151c-10.3,0-18.6,8.3-18.6,18.6v25.7"/>`;
             }
         },
-        Е: {
+        'Е': {
             l: 2.722,
             el: 2,
             step: 182,
@@ -65,7 +111,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${150.9 + x},50.8H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8v162.3c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/>`;
             }
         },
-        Ё: {
+        'Ё': {
             l: 2.823,
             el: 4,
             step: 182,
@@ -73,7 +119,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${150.9 + x},50.8H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8v162.3c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/><line class="cls-1" x1="${63.8 + x}" y1="8.5" x2="${63.8 + x}" y2="18.5"/><line class="cls-1" x1="${125.4 + x}" y1="8.5" x2="${125.4 + x}" y2="18.5"/>`;
             }
         },
-        Ж: {
+        'Ж': {
             l: 3.846,
             el: 5,
             step: 270,
@@ -85,7 +131,7 @@ const fontsBD = {
             <line class="cls-1" x1="${138.6 + x}" y1="154.8" x2="${138.6 + x}" y2="250.7" />`;
             }
         },
-        З: {
+        'З': {
             l: 2.209,
             el: 2,
             step: 160,
@@ -94,7 +140,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${106.8 + x},143.4c2.3-2.7,19.3-22.8,13.8-48.5c-5.5-25.7-30.6-43.1-55.8-44.1c-30.9-1.3-50,22.4-51.9,24.8" />`;
             }
         },
-        И: {
+        'И': {
             l: 3.299,
             el: 1,
             step: 195,
@@ -102,7 +148,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${20 + x},50.8V232c0,18.1,23.1,25.6,33.8,11l82.5-184.5c10.7-14.6,33.8-7.1,33.8,11v181.1" />`;
             }
         },
-        Й: {
+        'Й': {
             l: 3.632,
             el: 2,
             step: 195,
@@ -110,7 +156,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${20 + x},50.8V232c0,18.1,23.1,25.6,33.8,11l82.5-184.5c10.7-14.6,33.8-7.1,33.8,11v181.1" /><path class="cls-1" d="M${130 + x},8.5l-11.4,6.3c-12,6.6-26.5,6.6-38.4,0l-11.4-6.3" />`;
             }
         },
-        К: {
+        'К': {
             l: 2.450,
             el: 3,
             step: 168,
@@ -118,7 +164,7 @@ const fontsBD = {
                 return `<line class="cls-1" x1="${19.4 + x}" y1="50.8" x2="${19.4 + x}" y2="250.7" /><path class="cls-1" d="M${135 + x},43.7L${75 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${144.7 + x}" y1="250.7" x2="${63.4 + x}" y2="143.4" />`;
             }
         },
-        Л: {
+        'Л': {
             l: 2.224,
             el: 1,
             step: 210.65,
@@ -126,7 +172,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${5.91 + x},250.7l68-187.8c5.8-16,26.1-16.2,32.2-0.3l71.5,188.1"/>`;
             }
         },
-        М: {
+        'М': {
             l: 4.117,
             el: 1,
             step: 225.65,
@@ -134,7 +180,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${11.7 + x},250.7V69.6c0-20.1,27.6-26.1,36.2-7.9l41.7,152.4c6.8,14.4,27.6,14.4,34.3-0.1l40.7-151.3c8.5-18.3,36.2-12.3,36.2,7.8v180.2" />`;
             }
         },
-        Н: {
+        'Н': {
             l: 2.696,
             el: 3,
             step: 195,
@@ -142,7 +188,7 @@ const fontsBD = {
                 return `<line class="cls-1" x1="${18.5 + x}" y1="250.7" x2="${18.5 + x}" y2="50.8" /><line class="cls-1" x1="${165.6 + x}" y1="250.7" x2="${165.6 + x}" y2="50.8" /><line class="cls-1" x1="${22.9 + x}" y1="148.3" x2="${161.2 + x}" y2="148.3" />`;
             }
         },
-        О: {
+        'О': {
             l: 3.147,
             el: 1,
             step: 220,
@@ -150,7 +196,7 @@ const fontsBD = {
                 return `<circle class="cls-1" cx="${105.8 + x}" cy="150.8" r="99.9" />`;
             }
         },
-        П: {
+        'П': {
             l: 2.616,
             el: 1,
             step: 178,
@@ -158,7 +204,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${15 + x},250.7V69.4c0-10.3,8.4-18.6,18.8-18.6h100.6c10.4,0,18.8,8.3,18.8,18.6v181.3" />`;
             }
         },
-        Р: {
+        'Р': {
             l: 2.366,
             el: 1,
             step: 150,
@@ -166,7 +212,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${15.5 + x},250.7V63c0-6.7,5.5-12.2,12.4-12.2H${75 + x}c27.9,0,50.6,22.4,50.6,50v17.5c0,27.6-22.6,50-50.6,50h-46.7" />`;
             }
         },
-        С: {
+        'С': {
             l: 2.262,
             el: 1,
             step: 210,
@@ -174,7 +220,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${175.9 + x},71.8C${158.8 + x},58.2,${137.1 + x},50,${113.5 + x},50C${58.1 + x},50,${13.2 + x},95,${13.2 + x},150.4s44.9,100.3,100.3,100.3c24.1,0,46.2-8.5,63.5-22.6" />`;
             }
         },
-        Т: {
+        'Т': {
             l: 1.788,
             el: 2,
             step: 210,
@@ -182,7 +228,7 @@ const fontsBD = {
                 return `<line class="cls-1" x1="${20.4 + x}" y1="50.8" x2="${180.7 + x}" y2="50.8" /><line class="cls-1" x1="${100.6 + x}" y1="250.7" x2="${100.6 + x}" y2="54.4" />`;
             }
         },
-        У: {
+        'У': {
             l: 2.199,
             el: 3,
             step: 195,
@@ -191,7 +237,7 @@ const fontsBD = {
                 `;
             }
         },
-        Ф: {
+        'Ф': {
             l: 3.551,
             el: 3,
             step: 200,
@@ -201,7 +247,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${98.1 + x},69.9c47.6,0,86.3,33.8,86.3,75.5s-38.6,75.5-86.3,75.5" />`;
             }
         },
-        Х: {
+        'Х': {
             l: 2.435,
             el: 3,
             step: 200,
@@ -211,7 +257,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${165.6 + x}" y1="50.8" x2="${94.4 + x}" y2="145.4" />`;
             }
         },
-        Ц: {
+        'Ц': {
             l: 2.841,
             el: 2,
             step: 200,
@@ -220,7 +266,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${161 + x}" y1="50.8" x2="${161 + x}" y2="240.4" />`;
             }
         },
-        Ч: {
+        'Ч': {
             l: 2.111,
             el: 2,
             step: 180,
@@ -229,7 +275,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${150.5 + x}" y1="50.8" x2="${150.5 + x}" y2="250.7" />`;
             }
         },
-        Ш: {
+        'Ш': {
             l: 3.932,
             el: 2,
             step: 240,
@@ -238,7 +284,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${115.7 + x}" y1="50.8" x2="${115.7 + x}" y2="245.7" />`;
             }
         },
-        Щ: {
+        'Щ': {
             l: 4.251,
             el: 3,
             step: 260,
@@ -248,7 +294,7 @@ const fontsBD = {
                     <line class="cls-1" x1="${213.26 + x}" y1="50.83" x2="${213.26 + x}" y2="245.72" />`;
             },
         },
-        Ъ: {
+        'Ъ': {
             l: 2.749,
             el: 1,
             step: 215,
@@ -256,7 +302,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${11.97 + x},50.83h47.54c10.39,0,18.81,8.39,18.81,18.73v162.41c0,10.34,8.42,18.73,18.81,18.73h50.86c26.26,0,47.55-21.2,47.55-47.36v-16.52c0-26.15-21.29-47.36-47.55-47.36h-63.03"/>`;
             },
         },
-        Ы: {
+        'Ы': {
             l: 3.464,
             el: 2,
             step: 200,
@@ -265,7 +311,7 @@ const fontsBD = {
               <line class="cls-1" x1="${174.18 + x}" y1="50.83" x2="${174.18 + x}" y2="250.7" />`;
             },
         },
-        Ь: {
+        'Ь': {
             l: 2.462,
             el: 1,
             step: 150,
@@ -273,7 +319,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${6.1 + x},50.83v180.91c0,10.47,8.42,18.96,18.81,18.96h50.86c26.26,0,47.55-21.47,47.55-47.95v-16.73c0-26.48-21.29-47.95-47.55-47.95h-63.03"/>`;
             },
         },
-        Э: {
+        'Э': {
             l: 2.828,
             el: 2,
             step: 200,
@@ -283,7 +329,7 @@ const fontsBD = {
               <line class="cls-1" x1="${48.97 + x}" y1="148.7" x2="${163.97 + x}" y2="148.7" />`;
             },
         },
-        Ю: {
+        'Ю': {
             l: 4.402,
             el: 3,
             step: 280,
@@ -293,7 +339,7 @@ const fontsBD = {
               <line class="cls-1" x1="${11.22 + x}" y1="148.7" x2="${60.43 + x}" y2="148.7" />`;
             },
         },
-        Я: {
+        'Я': {
             l: 2.919,
             el: 2,
             step: 150,
@@ -302,7 +348,7 @@ const fontsBD = {
                      <line class="cls-1" x1="${9.52 + x}" y1="250.7" x2="${39.94 + x}" y2="163.9" />`;
             },
         },
-        а: {
+        'а': {
             l: 2.225,
             el: 1,
             step: 165,
@@ -311,7 +357,7 @@ const fontsBD = {
                 c37.2,0,67.3,30.1,67.3,67.3v67.3" />`;
             },
         },
-        б: {
+        'б': {
             l: 2.819,
             el: 1,
             step: 180,
@@ -321,7 +367,7 @@ const fontsBD = {
                 c31,0.2,67.3-27.3,67.3-67.3c0-37.2-30.1-67.3-67.3-67.3c-10.6,0-20,3-20,3c-13.2,4.7-21.2,13.5-24.7,18" />`;
             },
         },
-        в: {
+        'в': {
             l: 2.504,
             el: 1,
             step: 160,
@@ -332,7 +378,7 @@ const fontsBD = {
         c0-10.5,8.5-19,19-19h16.8h33.1c3.2,0,6.3,0.5,9.3,1.6l2.4,0.8c8.1,2.8,14.6,9.2,17.4,17.3v0c2.6,7.3,2.1,15.4-1.4,22.3l-4.9,9.7" />`;
             },
         },
-        г: {
+        'г': {
             l: 1.788,
             el: 1,
             step: 140,
@@ -343,7 +389,7 @@ const fontsBD = {
                 c12.2,0,23.8,0,36.2-6.9c8.2-4.6,13.6-10.4,16.7-14.4" />`;
             },
         },
-        д: {
+        'д': {
             l: 3.082,
             el: 1,
             step: 160,
@@ -352,7 +398,7 @@ const fontsBD = {
                 c37.8,0,68.4,30.6,68.4,68.4v58.4c0,3.4-0.3,6.7-0.7,10c-5,33.1-34.2,58.5-69.6,58.5c-22.4,0-42.4-10.2-55.3-26.2" />`;
             },
         },
-        е: {
+        'е': {
             l: 2.351,
             el: 1,
             step: 155,
@@ -361,7 +407,7 @@ const fontsBD = {
                 c17.1,0,32.7,6.4,44.6,16.9c19.8,17.5,7.1,50.4-19.3,50.4l-92.5,0" />`;
             },
         },
-        ё: {
+        'ё': {
             l: 2.451,
             el: 3,
             step: 155,
@@ -371,7 +417,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${108 + x}" y1="90.5" x2="${108 + x}" y2="100.5" />`;
             },
         },
-        ж: {
+        'ж': {
             l: 2.740,
             el: 5,
             step: 200,
@@ -383,7 +429,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${185.8 + x}" y1="116.2" x2="${138.5 + x}" y2="189.5" />`;
             },
         },
-        з: {
+        'з': {
             l: 1.487,
             el: 2,
             step: 135,
@@ -392,7 +438,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${84.2 + x},178.5c1.6-1.8,13-15.4,9.3-32.6c-3.7-17.3-20.6-29-37.6-29.7c-20.8-0.9-33.7,15.1-34.9,16.7" />`;
             },
         },
-        и: {
+        'и': {
             l: 1.912,
             el: 2,
             step: 160,
@@ -401,7 +447,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${13.9 + x},116.2v82.6c0,28.7,23.3,52,52,52H${84 + x}c22.8,0,42.1-14.6,49.1-35" />`;
             },
         },
-        й: {
+        'й': {
             l: 2.243,
             el: 3,
             step: 160,
@@ -411,7 +457,7 @@ const fontsBD = {
             <path class="cls-1" d="M${13.9 + x},116.2v82.6c0,28.7,23.3,52,52,52H${84 + x}c22.8,0,42.1-14.6,49.1-35" />`;
             },
         },
-        к: {
+        'к': {
             l: 1.722,
             el: 3,
             step: 120,
@@ -421,7 +467,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${106 + x}" y1="250.7" x2="${42.7 + x}" y2="178.5" />`;
             },
         },
-        л: {
+        'л': {
             l: 1.524,
             el: 1,
             step: 165,
@@ -429,7 +475,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${13.5 + x},250.7L${64 + x},124.3c4.3-10.8,19.4-10.9,23.9-0.2L${141 + x},250.7" />`;
             },
         },
-        м: {
+        'м': {
             l: 2.667,
             el: 1,
             step: 175,
@@ -438,7 +484,7 @@ const fontsBD = {
                 c-10.2-13.9-32.2-6.7-32.2,10.5v116.7" />`;
             },
         },
-        н: {
+        'н': {
             l: 1.912,
             el: 3,
             step: 165,
@@ -448,7 +494,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${25.9 + x}" y1="181.8" x2="${138.3 + x}" y2="181.8" />`;
             },
         },
-        о: {
+        'о': {
             l: 2.119,
             el: 1,
             step: 155,
@@ -456,7 +502,7 @@ const fontsBD = {
                 return `<circle class="cls-1" cx="${78.7 + x}" cy="183.4" r="67.3" />`;
             },
         },
-        п: {
+        'п': {
             l: 1.912,
             el: 2,
             step: 155,
@@ -465,7 +511,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${140.5 + x},250.7v-82.6c0-28.7-23.3-52-52-52H${70 + x}.5c-22.8,0-42.1,14.6-49.1,35" />`;
             },
         },
-        р: {
+        'р': {
             l: 2.536,
             el: 1,
             step: 175,
@@ -474,7 +520,7 @@ const fontsBD = {
                 c-37.2,0-67.3,30.1-67.3,67.3v67.3v62.1" />`;
             },
         },
-        с: {
+        'с': {
             l: 1.517,
             el: 1,
             step: 155,
@@ -483,7 +529,7 @@ const fontsBD = {
                 c16.2,0,31-5.7,42.6-15.2" />`;
             },
         },
-        т: {
+        'т': {
             l: 2.993,
             el: 3,
             step: 240,
@@ -493,7 +539,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${217.2 + x},250.7v-82.6c0-28.7-19.6-52-43.8-52h-15.3c-19.2,0-35.5,14.6-41.4,35" />`;
             },
         },
-        у: {
+        'у': {
             l: 1.787,
             el: 2,
             step: 150,
@@ -502,7 +548,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${132.7 + x}" y1="116.2" x2="${47.1 + x}" y2="312.8" />`;
             },
         },
-        ф: {
+        'ф': {
             l: 3.582,
             el: 3,
             step: 180,
@@ -512,7 +558,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${84.1 + x},116.2c41.7,0,75.6,31,75.6,69.2s-33.8,69.2-75.6,69.2" />`;
             },
         },
-        х: {
+        'х': {
             l: 1.697,
             el: 3,
             step: 160,
@@ -522,7 +568,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${130.7 + x}" y1="116.2" x2="${78.6 + x}" y2="180.1" />`;
             },
         },
-        ц: {
+        'ц': {
             l: 2.301,
             el: 2,
             step: 180,
@@ -531,7 +577,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${16.4 + x},116.2v82.6c0,28.7,23.3,52,52,52h18.1c22.8,0,42.1-14.6,49.1-35" />`;
             },
         },
-        ч: {
+        'ч': {
             l: 1.494,
             el: 2,
             step: 140,
@@ -540,7 +586,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${114.3 + x}" y1="116.2" x2="${114.3 + x}" y2="250.7" />`;
             },
         },
-        ш: {
+        'ш': {
             l: 2.972,
             el: 3,
             step: 230,
@@ -550,7 +596,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${10.8 + x},116.2v82.6c0,28.7,19.1,52,42.6,52h14.8c18.7,0,34.5-14.6,40.3-35" />`;
             },
         },
-        щ: {
+        'щ': {
             l: 3.367,
             el: 3,
             step: 240,
@@ -560,7 +606,7 @@ const fontsBD = {
                 <path class="cls-1" d="M${10 + x},116.2v82.6c0,28.7,19.1,52,42.6,52h14.8c18.7,0,34.5-14.6,40.3-35" />`;
             },
         },
-        ъ: {
+        'ъ': {
             l: 1.977,
             el: 1,
             step: 170,
@@ -569,7 +615,7 @@ const fontsBD = {
                 v-90.7c0-7-6.5-12.7-14.6-12.7H${8.5 + x}" />`;
             },
         },
-        ы: {
+        'ы': {
             l: 2.436,
             el: 2,
             step: 170,
@@ -579,7 +625,7 @@ const fontsBD = {
                        <line class="cls-1" x1="${151.7 + x}" y1="116.2" x2="${151.7 + x}" y2="250.7" />`;
             },
         },
-        ь: {
+        'ь': {
             l: 1.794,
             el: 1,
             step: 130,
@@ -588,7 +634,7 @@ const fontsBD = {
                 h-51.1" />`;
             },
         },
-        э: {
+        'э': {
             l: 1.916,
             el: 2,
             step: 150,
@@ -598,7 +644,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${45.7 + x}" y1="182.1" x2="${123.8 + x}" y2="182.1" />`;
             },
         },
-        ю: {
+        'ю': {
             l: 2.963,
             el: 3,
             step: 230,
@@ -608,7 +654,7 @@ const fontsBD = {
                 <line class="cls-1" x1="${28.5 + x}" y1="182.1" x2="${61.7 + x}" y2="182.1" />`;
             },
         },
-        я: {
+        'я': {
             l: 2.168,
             el: 2,
             step: 140,
@@ -677,7 +723,7 @@ const fontsBD = {
             l: 4.2024,
             el: 3
         },
-        A: {
+        'A': {
             l: 2.806,
             el: 2,
             step: 200,
@@ -685,7 +731,7 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${5.91 + x},250.7l68-187.8c5.8-16,26.1-16.2,32.2-0.3l71.5,188.1"/><line class="cls-1" x1="${32.45 + x}" y1="188.5" x2="${147.55 + x}" y2="188.5"/>`;
             }
         },
-        B: {
+        'B': {
             l: 3.333,
             el: 1,
             step: 156,
@@ -693,18 +739,18 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${30.6 + x},142.1h59.7c26.6,0,48.1,21.5,48.1,48.1v12.4c0,26.6-21.5,48.1-48.1,48.1H${40.1 + x}c-10.3,0-18.7-8.4-18.7-18.7V69.5c0-10.3,8.4-18.7,18.7-18.7h49.6c20.5,0,37.1,16.6,37.1,37.1v14.9c0,15.2-9.2,28.8-23.2,34.5l-3.3,1.3" />`;
             }
         },
-        C: {
+        'C': {
             l: 2.262,
             el: 1,
             getLetter(x) {
                 return `<path class="cls-1" d="M${175.9 + x},71.8C${158.8 + x},58.2,${137.1 + x},50,${113.5 + x},50C${58.1 + x},50,${13.2 + x},95,${13.2 + x},150.4s44.9,100.3,100.3,100.3c24.1,0,46.2-8.5,63.5-22.6" />`;
             }
         },
-        D: {
+        'D': {
             l: 2.997,
             el: 1
         },
-        E: {
+        'E': {
             l: 2.722,
             el: 2,
             step: 182,
@@ -712,15 +758,15 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${150.9 + x},50.8H${35.4 + x}c-10.4,0-18.8,8.4-18.8,18.8v162.3c0,10.4,8.4,18.8,18.8,18.8h115.5" /><line class="cls-1" x1="${111.9 + x}" y1="146.8" x2="${21.3 + x}" y2="146.8"/>`;
             }
         },
-        F: {
+        'F': {
             l: 2.070,
             el: 2
         },
-        G: {
+        'G': {
             l: 2.794,
             el: 1
         },
-        H: {
+        'H': {
             l: 2.696,
             el: 3,
             step: 195,
@@ -728,15 +774,15 @@ const fontsBD = {
                 return `<line class="cls-1" x1="${18.5 + x}" y1="250.7" x2="${18.5 + x}" y2="50.8" /><line class="cls-1" x1="${165.6 + x}" y1="250.7" x2="${165.6 + x}" y2="50.8" /><line class="cls-1" x1="${22.9 + x}" y1="148.3" x2="${161.2 + x}" y2="148.3" />`;
             }
         },
-        I: {
+        'I': {
             l: 1.000,
             el: 1
         },
-        J: {
+        'J': {
             l: 1.635,
             el: 1
         },
-        K: {
+        'K': {
             l: 2.450,
             el: 3,
             step: 168,
@@ -744,13 +790,13 @@ const fontsBD = {
                 return `<line class="cls-1" x1="${19.4 + x}" y1="50.8" x2="${19.4 + x}" y2="250.7" /><path class="cls-1" d="M${135 + x},43.7L${75 + x},121.8c-7.1,9.1-18,14.5-29.6,14.5h-21.5" /><line class="cls-1" x1="${144.7 + x}" y1="250.7" x2="${63.4 + x}" y2="143.4" />`;
             }
         },
-        L: {
+        'L': {
             l: 1.557,
             el: 1,
             getLetter(x) {
             }
         },
-        M: {
+        'M': {
             l: 4.117,
             el: 1,
             step: 225.65,
@@ -758,11 +804,11 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${11.7 + x},250.7V69.6c0-20.1,27.6-26.1,36.2-7.9l41.7,152.4c6.8,14.4,27.6,14.4,34.3-0.1l40.7-151.3c8.5-18.3,36.2-12.3,36.2,7.8v180.2" />`;
             }
         },
-        N: {
+        'N': {
             l: 3.299,
             el: 1
         },
-        O: {
+        'O': {
             l: 3.147,
             el: 1,
             step: 220,
@@ -770,7 +816,7 @@ const fontsBD = {
                 return `<circle class="cls-1" cx="${105.8 + x}" cy="150.8" r="99.9" />`;
             }
         },
-        P: {
+        'P': {
             l: 2.366,
             el: 1,
             step: 150,
@@ -778,19 +824,19 @@ const fontsBD = {
                 return `<path class="cls-1" d="M${15.5 + x},250.7V63c0-6.7,5.5-12.2,12.4-12.2H${75 + x}c27.9,0,50.6,22.4,50.6,50v17.5c0,27.6-22.6,50-50.6,50h-46.7" />`;
             }
         },
-        Q: {
+        'Q': {
             l: 3.514,
             el: 2
         },
-        R: {
+        'R': {
             l: 2.919,
             el: 2
         },
-        S: {
+        'S': {
             l: 2.428,
             el: 1
         },
-        T: {
+        'T': {
             l: 1.788,
             el: 2,
             step: 210,
@@ -798,19 +844,19 @@ const fontsBD = {
                 return `<line class="cls-1" x1="${20.4 + x}" y1="50.8" x2="${180.7 + x}" y2="50.8" /><line class="cls-1" x1="${100.6 + x}" y1="250.7" x2="${100.6 + x}" y2="54.4" />`;
             }
         },
-        U: {
+        'U': {
             l: 2.505,
             el: 1
         },
-        V: {
+        'V': {
             l: 2.208,
             el: 1
         },
-        W: {
+        'W': {
             l: 4.162,
             el: 1
         },
-        X: {
+        'X': {
             l: 2.435,
             el: 3,
             step: 200,
@@ -820,11 +866,11 @@ const fontsBD = {
                 <line class="cls-1" x1="${165.6 + x}" y1="50.8" x2="${94.4 + x}" y2="145.4" />`;
             }
         },
-        Y: {
+        'Y': {
             l: 1.789,
             el: 2
         },
-        Z: {
+        'Z': {
             l: 2.822,
             el: 1
         },
@@ -1032,7 +1078,7 @@ const fontsBD = {
             },
         },
     },
-    ['Corinthia'] :{
+    ['Corinthia']: {
         А: {
             l: 2.475,
             el: 4,
@@ -1893,7 +1939,7 @@ const fontsBD = {
             el: 1
         },
         r: {
-            
+
             l: 0.614,
             el: 1,
             step: 140,
@@ -2145,7 +2191,7 @@ function createNewString() {
     const palette = createColorPalette(neonColors, neonString);
     palette.addEventListener('click', (e) => {
         if (e.target.classList == "color") {
-            let color = e.target.style.backgroundColor
+            let color = e.target.style.backgroundColor;
             changeNeonColor(neonString, color)
         }
     })
@@ -2197,7 +2243,7 @@ function calc(font = currentFont) {
             let a = el.value.split('');
             for (let i = 0; i < a.length; i++) {
                 if (fontsBD[font][a[i]]) {
-                    if(font== 'Comfortaa'){
+                    if (font == 'Comfortaa') {
                         metrs = metrs + +fontsBD[font][a[i]].l * el.nextElementSibling.value / 1.3;
                     } else {
                         metrs = metrs + +fontsBD[font][a[i]].l * el.nextElementSibling.value;
@@ -2225,12 +2271,13 @@ function createElement(tag, elClass) {
 }
 
 function addSiblingTextStyles(el) {
+    console.dir(el);
     if (el.previousElementSibling != undefined) {
         el.style.color = el.previousElementSibling.style.color;
         el.style.textShadow = el.previousElementSibling.style.textShadow;
-        el.style.fontSize = el.previousElementSibling.style.fontSize
+        el.style.fontSize = el.previousElementSibling.style.fontSize;
     } else {
-        let colorCode = neonColors.orange;
+        let colorCode = neonColors[0].color;
         el.style.color = colorCode;
         el.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
         el.style.fontSize = 10
@@ -2248,13 +2295,17 @@ function createColorPalette(colorsPalette) {
 
 function createColorItem(color) {
     const colorItem = createElement("div", "color")
-    colorItem.style.backgroundColor = color;
+    colorItem.style.backgroundColor = color.color;
     return colorItem
 }
 
 function changeNeonColor(text, colorCode) {
-    text.style.color = colorCode;
-    text.style.textShadow = `0 0 10px ${colorCode},0 0 20px ${colorCode},0 0 30px ${colorCode},0 0 40px ${colorCode}`;
+    console.log(colorCode);
+    const neonColor = neonColors.find(el => el.color == colorCode);
+    const glow = neonColor.glow;
+    console.log(neonColor);
+    text.style.color = neonColor.color;
+    text.style.textShadow = glow;
 }
 
 function makeSvg(word) {
