@@ -1859,7 +1859,7 @@ const fontsBD = {
             el: 2,
         },
         e: {
-            ll: 0.739,
+            l: 0.739,
             el: 1,
             step: 155,
             getLetter(x) {
