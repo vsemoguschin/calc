@@ -3,6 +3,34 @@
 @font-face {
     font-family: 'Corinthia';
     src: url(./fonts/corinthia.ttf);
+};
+@font-face {
+    font-family: 'SailingHeart';
+    src: url(./fonts/SailingHeart.ttf);
+}
+@font-face {
+    font-family: 'Marske';
+    src: url(./fonts/Marske.otf);
+}
+@font-face {
+    font-family: 'MADELikesScript';
+    src: url(./fonts/MADELikesScript.otf);
+}
+@font-face {
+    font-family: 'dreamBeach';
+    src: url(./fonts/dreamBeach.ttf);
+}
+@font-face {
+    font-family: 'NEON';
+    src: url(./fonts/NEON.ttf);
+}
+@font-face {
+    font-family: 'Madegoodtime';
+    src: url(./fonts/Madegoodtime.otf);
+}
+@font-face {
+    font-family: 'VisualHollow';
+    src: url(./fonts/VisualHollow.otf);
 }
 
 ;
