@@ -11,50 +11,66 @@
 
 <body>
   <div class="wrapper">
-    <div class="client__block">
-      <div class="client__info">
-        Ваша специальная стоимость с учетом сезонной скидки 20%
+    <div class="preview">
+
+      <!-- <div class="zoom">
+        <button class="zoom__button">+</button>
+        <button class="zoom__button">-</button>
+      </div> -->
+      <div class="client__block">
+        <div class="client__info">
+          Ваша специальная стоимость с учетом сезонной скидки 20%
+        </div>
+        <div class="client__old-price" contenteditable="true">40000</div>
+        <div class="client__new-price" contenteditable="true">30000</div>
+        <div class="client__info" contenteditable="true">Предложение действует до 14.06.23</div>
       </div>
-      <div class="client__old-price">40000</div>
-      <div class="client__new-price">30000</div>
-      <div class="client__info">Диммер с пультом +1500 руб к стоимости</div>
+      
+      <div class="product">
+        <div class="product__width">100см</div>
+        <div class="product__height">10см</div>
+        <div class="product__text" contenteditable="true" spellcheck="false">
+          <div class="text__string" style="font-size: 40px;position: relative;">Hello
+            <!-- <input class="input__height" type="number" min="5" value="10"> -->
+          </div> 
+        </div>
+        <div class="product__options"></div>
+      </div>
+  
+      <div class="info__block" style="top:220px">
+        <p><b style="color:rgb(42, 171, 231)">Материал вывески:</b> прозрачный монолитный поликарбонат 4 мм. Не бьется и не выцветает на солнце.<br><br>
+  
+          <b style="color:rgb(42, 171, 231)">Гибкий неон:</b> светорассеивающая силиконовая оплетка. Кратность реза 1 см. Самый качественный и дорогой материал на рынке в большим сроком службы более 6 лет непрерывного свечения.<br><br> 
+          
+          <b style="color:rgb(42, 171, 231)">Заглушки:</b> всегда клеятся на концы неоновых элементов для большей эстетичности.</p>
+      </div>
     </div>
-    <div class="product">
-      <div class="product__width">100см</div>
-      <div class="product__height">10см</div>
-      <div class="product__text"></div>
-    </div>
+
     <div class="productParameters">
       <div class="productFonts"></div>
       <div class="parametrsInput"></div>
-      <a class="addNewString">+Добавить строку</a>
+      <!-- <a class="addNewString">+Добавить строку</a> -->
       <div class="parametrsOutput">
         <div class="el">0</div>
         <div class="m">0</div>
-        <div class="optPrice">0</div>
+        <!-- <div class="optPrice">0</div> -->
+      </div>
+      <div class="productDops">
+        <button class="giftBtn">+ПОДАРОК</button>
+        <button class="dimmerBtn">+ДИМЕР</button>
+        <button class="dimmerBtn">+ПЛЕНКА</button>
+        <button class="dimmerBtn">ТОЛСТЫЙ НЕОН</button>
+        <button class="dimmerBtn">УЛИЦА</button>
+        <button class="dimmerBtn">СМАРТ</button>
       </div>
     </div>
   </div>
   <!-- <div style="background-color: wheat; height: 1000px; width: 100%" class="svgblok" >
-    <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150.21 1187.1">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #e60c80;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 17.01px;
-      }
-    </style>
-  </defs>
-  <path class="cls-1" d="M79.4,177.91c-46.35,7.38-71.09-47.35-70.89-89.18,.19-40.2,21.04-80.22,62.53-80.22s61.85,39.08,62.52,78.8c.35,20.94-3.34,43.25-15.75,57.71-33.17,38.64-82.32,.1-78.71-57.72,1.59-25.38,11.17-50.23,31.94-50.23s31.31,24.56,31.93,49.86c.61,24.74-8.37,47.32-26.93,50.87"/>
-</svg>
-    </div> -->
+
+  </div> -->
 
 <script src="https://cdn.jsdelivr.net/snap.svg/0.3.0/snap.svg.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>
