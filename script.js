@@ -1587,7 +1587,8 @@ document.addEventListener('click', (e) => {
     oldOptions.forEach(el => {
         el.remove()
     });
-    
+    productWidth.style.display = 'none'
+    productHeight.style.display = 'none'
     if (e.target.className !== 'text__string') {
         strings.forEach((string, i) => {
             const newOptions = createOptions(string, string.style.fontSize);
@@ -1598,7 +1599,6 @@ document.addEventListener('click', (e) => {
             // string.querySelector('.colors').setAttribute('contenteditable', 'false');
         })
         calc()
-
     } 
     if (e.target.className == "color") {
         let color = e.target.style.backgroundColor;
@@ -1873,6 +1873,8 @@ function calc() {
     productHeight.textContent = height + ' см'
     els.textContent = elements
     productWidth.textContent = width + ' см';
+    productWidth.style.display = 'flex'
+    productHeight.style.display = 'flex'
     // console.log(metrs);
     metrsText.textContent = Math.ceil(metrs) / 10;
     // optPrice.textContent = calcPrice(elements, Math.ceil(metrs) / 100, height, width);
