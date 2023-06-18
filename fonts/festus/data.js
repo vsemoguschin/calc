@@ -562,7 +562,7 @@ const festus = {
             }
         },
         "A": {
-            ll: 0.218,
+            l: 0.218,
             el: 3,
             step: 200,
             getLetter(x) {
