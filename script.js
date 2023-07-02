@@ -106,15 +106,18 @@ const fontsBD = {
     
 }
 
-const promotionPeriod = document.querySelector('.promotionPeriod');
-var now = new Date();
-const threeDaysLater = now.setDate(now.getDate() + 3);
-const day = new Date(threeDaysLater).getDate();
-const month = new Date(threeDaysLater).getMonth() + 1;
-const year = new Date(threeDaysLater).getFullYear();
-promotionPeriod.textContent = [day, month, year].join('.');
+function getPromotionPerion() {
+    const promotionPeriod = document.querySelector('.promotionPeriod');
+    var now = new Date();
+    const threeDaysLater = now.setDate(now.getDate() + 3);
+    const day = new Date(threeDaysLater).getDate();
+    const month = new Date(threeDaysLater).getMonth() + 1;
+    const year = new Date(threeDaysLater).getFullYear();
+    promotionPeriod.textContent = [day, month, year].join('.');
+}
 
-console.log();
+getPromotionPerion();
+
 
 const productText = document.querySelector(".product__text");
 
@@ -183,7 +186,7 @@ function w(e) {
 calc()
 
 
-// makeSvg('аa', 'festus');
+// makeSvg('oо', 'Comfortaa');
 document.addEventListener('click', (e) => {
     // console.dir(e.target.offsetParent.offsetParent);
     const strings = document.querySelectorAll('.text__string');
@@ -221,17 +224,32 @@ document.addEventListener('click', (e) => {
 });
 
 productText.addEventListener('keydown', (e) => {
+    if (!e.target.firstElementChild) {
+        // console.log('0');
+        const firstString = createElement('div', 'text__string');
+        productText.appendChild(firstString);
+        firstString.style.minHeight = '45px';
+        firstString.style.fontSize = '40px'
+    }
     if (fontsBD[currentFont][e.key]
         || e.key == "ArrowLeft"
         || e.key == "ArrowRight"
-        || e.key == "Backspace"
         || e.key == "ArrowUp"
+        || e.key == "Backspace"
         || e.key == "ArrowDown"
         || e.key == "Enter") {
-    return true
+        // console.dir(e.target.firstElementChild);
+        return true   
     }
+    
     // return calculation()
     return e.preventDefault();
+});
+
+productText.addEventListener('paste', (e) => {
+    e.preventDefault()
+    var text = e.clipboardData.getData("text/plain");
+    document.execCommand("insertHTML", false, text);
 });
 
 const copyBtn = createElement("button", "copyBtn");
@@ -431,8 +449,9 @@ function calc() {
 
     let productPreview = [];
     const strings = document.querySelector('.product__text').children;
+    const strings1 = document.querySelector('.product__text');
     const options = document.querySelectorAll('.options');
-    console.log(strings);
+    // console.dir(strings1);
     const heightInput = document.querySelectorAll('.input__height');
     
     
@@ -449,7 +468,7 @@ function calc() {
             text: strings[i].innerText.split(''),
             size: +strings[i].style.fontSize.slice(0, -2)/40,
         }
-        console.log(options[i]);
+        // console.log(options[i]);
         options[i].style.height = strings[i].getBoundingClientRect().height + 'px';
         options[i].style.gap = strings[i].getBoundingClientRect().width + 55 + 'px';
         heightInput[i].value = +strings[i].style.fontSize.slice(0, -2) / 4;
@@ -561,7 +580,7 @@ function makeSvg(word, font) {
         // console.log(res);
         // svgBlock.innerHTML = `<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1227.33 1198.82"><defs><style>.cls-1 {fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 17.01px;}</style></defs>${res}</svg>`;
 
-        return `<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 2000 2000"><defs><style>.cls-1 {fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 17.01px;}</style></defs>${res}</svg>`
+        return `<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1227.33 1198.82"><defs><style>.cls-1 {fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 17.01px;}</style></defs>${res}</svg>`
     }
 
 }
@@ -660,3 +679,9 @@ zoomBtn.forEach((btn, i) => {
 //     })
 // }
 // getCode(arr)
+
+// const zapaska = createElement('div', 'text__string');
+// zapaska.textContent = 'srv';
+// zapaska.style.display = 'none';
+// // zapaska.style.height = '0px';
+// productText.appendChild(zapaska)
